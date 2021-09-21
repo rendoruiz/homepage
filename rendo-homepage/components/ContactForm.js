@@ -115,7 +115,7 @@ const ContactForm = () => {
 
         <div className="grid mb-8">
           <span className="font-bold mb-1">Captcha</span>
-          <div className="g-recaptcha" data-sitekey={process.env.SITE_RECAPTCHA_KEY}></div>
+          <div className="g-recaptcha origin-top-left transform scale-[0.77] sm:scale-100" data-sitekey={process.env.SITE_RECAPTCHA_KEY}></div>
           <p 
             onClick={refreshCaptcha}
             className="mt-1 text-xs text-primary cursor-pointer"
