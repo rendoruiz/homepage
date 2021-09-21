@@ -3,9 +3,9 @@ const ContactForm = () => {
     <form 
       name="contact" 
       method="POST" 
+      data-netlify-recaptcha="true"
       data-netlify="true" 
       netlify-honeypot="honeyjar"
-      data-netlify-recaptcha="true"
       className="grid content-start"
     >
       <input 
