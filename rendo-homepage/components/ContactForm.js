@@ -65,6 +65,7 @@ const ContactForm = () => {
     if (window.grecaptcha) {
       try {
         window.grecaptcha.reset();
+        setCaptchaHint(null);
       } catch (error) {
         console.error(error);
       }
