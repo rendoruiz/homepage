@@ -56,7 +56,7 @@ const ContactForm = () => {
         />
       </div>
 
-      <div className="grid mb-5">
+      <div className="grid mb-8">
         <label 
           htmlFor="message" 
           className="font-bold mb-1"

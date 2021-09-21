@@ -50,20 +50,20 @@ export default function Home() {
 
       <main>
         <section className="px-5 bg-white">
-          <div className="mx-auto max-w-3xl w-full py-14">
+          <div className="mx-auto max-w-3xl w-full py-20">
             <h1 className="text-4xl font-bold text-gray-900">Hello, I'm Rendo</h1>
-            <span className="text-gray-500 text-xl font-bold">A web developer.</span>
-            <p className="mt-7 max-w-prose leading-7">
+            <span className="text-gray-500 text-xl font-bold">web developer</span>
+            <p className="mt-7 leading-7">
               I am recent graduate from NAIT under the Digital Media & IT progam on the Computer Software Development concentration. I enjoy working on front-end development and have experience building sites using React.js, Next.js, Create React App, tailwindcss, HTML, CSS, and JavaScript.
             </p>
-            <p className="mt-5 max-w-prose leading-7">
+            <p className="mt-5 leading-7">
               Scroll down to check out my <span className="anchorlink">portfolio</span> and feel free to leave a message on the <span className="anchorlink">contact form</span> further below.
             </p>
           </div>
         </section>
 
         <section className="px-5 bg-primary text-white bg-opacity-70">
-          <div className="mx-auto max-w-3xl w-full py-14">
+          <div className="mx-auto max-w-3xl w-full py-20">
             <h2 className="text-4xl font-bold">My portfolio.</h2>
             <div className="mt-5 grid grid-cols-2 gap-5">
               <div className="card">
@@ -117,7 +117,7 @@ export default function Home() {
         </section>
 
         <section className="px-5 bg-white">
-          <div className="mx-auto max-w-3xl w-full py-14">
+          <div className="mx-auto max-w-3xl w-full py-20">
             <h2 className="text-4xl font-bold mb-5">Leave a message.</h2>
             <ContactForm />
           </div>
