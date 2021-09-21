@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.mainlayout {
+  @apply min-h-screen bg-gray-100 text-gray-800 font-primary tracking-wide select-none grid;
+  grid-template-rows: auto 1fr auto;
+}
 
 .anchorlink {
   @apply text-primary font-bold cursor-pointer relative;
