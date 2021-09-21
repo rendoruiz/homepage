@@ -15,3 +15,12 @@
 .anchorlink:hover::after {
   @apply w-full;
 }
+
+.card {
+  @apply bg-white text-gray-800 rounded shadow-lg overflow-hidden grid;
+  grid-template-rows: auto 1fr;
+}
+.card-description {
+  @apply p-4 grid;
+  grid-template-rows: auto auto 1fr;
+}
