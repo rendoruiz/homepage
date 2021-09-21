@@ -36,10 +36,10 @@ export default function Home() {
           <h1 className="text-4xl font-bold text-gray-900">Hello, I'm Rendo</h1>
           <span className="text-gray-500 text-xl font-bold">Web Developer</span>
           <p className="mt-7 leading-7">
-            I am recent graduate from NAIT under the Digital Media & IT progam on the Computer Software Development concentration. I enjoy working on front-end development and have experience building sites using React.js, Next.js, Create React App, tailwindcss, HTML, CSS, and JavaScript.
+            I am a recent graduate from NAIT under the Digital Media & IT program in the Computer Software Development concentration. I enjoy working on front-end development and have experience building sites using React.js, Next.js, Create React App, Tailwind CSS, HTML, CSS, and JavaScript.
           </p>
           <p className="mt-5 leading-7">
-            Scroll down to check out <span className="anchorlink" onClick={() => anchorScroll("portfolio")}>my portfolio</span> and feel free to <span className="anchorlink" onClick={() => anchorScroll("contact")}>leave a message</span> on the contact form further below.
+            Scroll down to check out <span className="anchorlink" onClick={() => anchorScroll("portfolio")}>my portfolio</span>, and feel free to <span className="anchorlink" onClick={() => anchorScroll("contact")}>leave a message</span> on the contact form further below.
           </p>
         </div>
       </section>
@@ -53,7 +53,7 @@ export default function Home() {
               <div className="card-description">
                 <h3 className="text-xl font-bold mb-2">Alberta Drone Specialists</h3>
                 <p>
-                  My first work project with <a href="https://bridgeittech.ca/">BridgeIT Tech</a>. The site is built using Next.js' Static Site Generation (SSG). This is the first project I used Next.js and CSS Modules on that spans multiple pages.
+                  The website for Alberta Drone Specialists is my first work project with <a href="https://bridgeittech.ca/">BridgeIT Tech</a>. This website is the first project I used Next.js on using its Static Site Generation (SSG) feature and CSS Modules.
                 </p>
                 <div className="flex mt-5 self-end text-sm">
                   <a 
@@ -72,7 +72,7 @@ export default function Home() {
               <div className="card-description">
                 <h3 className="text-xl font-bold mb-2">HackerNews Viewer</h3>
                 <p>
-                  My first personal project using React.js and Create React App library. The site uses HackerNews's free API for content and mimics Reddit's new design for layout. The site is hosted on Netlify with CI/CD enabled.
+                  This HackerNews viewer is my first personal project using React.js and Create React App library. The site uses HackerNews's free API for content and mimics Reddit's new design for layout. I used Netlify for its hosting with CI/CD enabled.
                 </p>
                 <div className="flex mt-5 self-end text-sm">
                   <a 

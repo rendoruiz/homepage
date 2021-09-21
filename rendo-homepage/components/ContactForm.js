@@ -57,7 +57,7 @@ const ContactForm = () => {
           setCaptchaHint('Captcha is required.');
         }
       } catch(error) {
-        console.error(error);
+        // console.error(error);
         setCaptchaHint('Captcha unavailable.');
       }
       

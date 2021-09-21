@@ -72,7 +72,7 @@ const MainLayout = ({ children }) => {
             </a>
           </li>
         </ul>
-        <p>Made with Next.js and tailwindcss with ♥</p>
+        <p>Made with Next.js and Tailwind CSS with ♥</p>
         <p>&copy; 2021 Rendo Ruiz</p>
       </footer>
     </div>
