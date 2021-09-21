@@ -1,11 +1,13 @@
 import axios from 'axios'
 import clsx from 'clsx'
+import { useRouter } from 'next/dist/client/router'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 
 const ContactForm = () => {
   const [highlightInvalidFields, setHighlightInvalidFields] = useState(false);
   const [captchaHint, setCaptchaHint] = useState(null);
+  const router = useRouter();
 
   const encode = (data) => {
     return Object.keys(data)
@@ -41,12 +43,14 @@ const ContactForm = () => {
     
           axios.post('/', encodedBody, axiosHeader)
             .then((response) => {
-              alert('Message has been sent.');
-              console.log(response);
+              // alert('Message has been sent.');
+              // console.log(response);
+              router.push('/contactsuccess');
             })
             .catch((error) => {
-              alert('An error has occured.');
-              console.error(error);
+              // alert('An error has occured.');
+              // console.error(error);
+              router.push('/contacterror');
             });
         } 
         else {
@@ -67,7 +71,8 @@ const ContactForm = () => {
         window.grecaptcha.reset();
         setCaptchaHint(null);
       } catch (error) {
-        console.error(error);
+        // console.error(error);
+        setCaptchaHint('Captcha unavailable.')
       }
     }
   }
