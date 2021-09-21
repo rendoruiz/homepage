@@ -5,6 +5,10 @@ import Link from 'next/link'
 import ContactForm from '../components/ContactForm'
 
 export default function Home() {
+  const anchorScroll = (id) => {
+    document.getElementById(id).scrollIntoView({behavior: "smooth", block: "start"});
+  }
+
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800 font-primary tracking-wide select-none">
       <Head>
@@ -59,12 +63,12 @@ export default function Home() {
               I am recent graduate from NAIT under the Digital Media & IT progam on the Computer Software Development concentration. I enjoy working on front-end development and have experience building sites using React.js, Next.js, Create React App, tailwindcss, HTML, CSS, and JavaScript.
             </p>
             <p className="mt-5 leading-7">
-              Scroll down to check out <span className="anchorlink">my portfolio</span> and feel free to <span className="anchorlink">leave a message</span> on the contact form further below.
+              Scroll down to check out <span className="anchorlink" onClick={() => anchorScroll("portfolio")}>my portfolio</span> and feel free to <span className="anchorlink" onClick={() => anchorScroll("contact")}>leave a message</span> on the contact form further below.
             </p>
           </div>
         </section>
 
-        <section className="px-5 bg-primary text-white bg-opacity-70">
+        <section id="portfolio" className="px-5 bg-primary text-white bg-opacity-70">
           <div className="mx-auto max-w-3xl w-full py-20">
             <h2 className="text-4xl font-bold">My portfolio.</h2>
             <div className="mt-7 md:mt-5 grid md:grid-cols-2 gap-7 md:gap-5">
@@ -118,7 +122,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="px-5 bg-white">
+        <section id="contact" className="px-5 bg-white">
           <div className="mx-auto max-w-3xl w-full py-20">
             <h2 className="text-4xl font-bold mb-5">Leave a message.</h2>
             <ContactForm />
