@@ -1,6 +1,25 @@
 const ContactForm = () => {
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": event.target.getAttribute("name"),
+        ...name
+      })
+    }).then(() => alert('success')).catch(error => alert(error))
+  }
+
   return ( 
     <form 
+      onSubmit={handleSubmit}
       name="contact" 
       method="POST" 
       netlify-honeypot="honeyjar"
@@ -72,7 +91,7 @@ const ContactForm = () => {
         />
       </div>
 
-      <div className="mb-5">
+      <div className="grid mb-5">
         <span className="font-bold mb-1">Captcha</span>
         <div className="g-recaptcha" data-sitekey={process.env.SITE_RECAPTCHA_KEY}></div>
       </div>
