@@ -73,7 +73,7 @@ const ContactForm = () => {
         />
       </div>
 
-      <div data-netlify-recaptcha="true" className="mb-5"></div>
+      <div data-netlify-recaptcha="true"></div>
 
       <button 
         type="submit"
