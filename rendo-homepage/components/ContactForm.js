@@ -9,17 +9,23 @@ const ContactForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "name": event.target.name.value,
-        "email": event.target.email.value,
-        "message": event.target.message.value,
-        "g-recaptcha-response": grecaptcha.getResponse()
-      })
-    }).then(() => alert('success')).catch(error => alert(error))
+    
+    const captchaResponse = grecaptcha.getResponse();
+    if (captchaResponse) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "name": event.target.name.value,
+          "email": event.target.email.value,
+          "message": event.target.message.value,
+          "g-recaptcha-response": captchaResponse
+        })
+      }).then(() => alert('success')).catch(error => alert(error))
+    } 
+    else {
+      alert('Complete captcha before sending.')
+    }
   }
 
   useEffect(() => {

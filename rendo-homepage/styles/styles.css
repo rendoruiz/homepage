@@ -17,7 +17,7 @@
 }
 
 .button {
-  @apply px-3 py-1 border-2 border-primary rounded-full font-bold hover:bg-primary hover:text-white transition-colors;
+  @apply px-3 py-1 border-2 border-primary rounded-full font-bold hover:bg-primary hover:text-white transition-colors disabled:bg-gray-100 disabled:border-gray-300 disabled:text-gray-300 disabled:cursor-not-allowed;
 }
 
 .card {
