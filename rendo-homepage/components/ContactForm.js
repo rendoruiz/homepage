@@ -5,7 +5,7 @@ const ContactForm = () => {
       method="POST" 
       data-netlify-recaptcha="true"
       data-netlify="true" 
-      netlify-honeypot="honeyjar"
+      // netlify-honeypot="honeyjar"
       className="grid content-start"
     >
       <input 
@@ -14,14 +14,14 @@ const ContactForm = () => {
         value="contact" 
       />
 
-      <div className="hidden">
+      {/* <div className="hidden">
         <label>
           <input 
             type="text" 
             name="honeyjar" 
           />
         </label>
-      </div>
+      </div> */}
 
       <div className="grid mb-5">
         <label 
