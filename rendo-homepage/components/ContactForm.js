@@ -15,14 +15,14 @@ const ContactForm = () => {
 
     if (captchaResponse) {
       const encodedBody = encode({
+        'form-name': 'contact',
         "name": event.target.name.value,
         "email": event.target.email.value,
         "message": event.target.message.value,
         "g-recaptcha-response": captchaResponse
       });
-      console.log(encodedBody);
 
-      axios.post(`${window.location.origin}/`, encodedBody)
+      axios.post('/', encodedBody, {header: { "Content-Type": "application/x-www-form-urlencoded" }})
         .then((response) => {
           alert(response);
           console.log(response);
