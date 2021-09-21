@@ -51,7 +51,11 @@ export default function Home() {
           <h2 className="text-4xl font-bold">My portfolio.</h2>
           <div className="mt-7 md:mt-5 grid md:grid-cols-2 gap-7 md:gap-5">
             <div className="card">
-              <img src="" alt="" className="bg-gray-200 w-full h-44 object-cover" />
+              <img 
+                src="/images/ss-abs.jpg" 
+                alt="screenshot of Alberta Drone Specialists homepage" 
+                className="bg-gray-200 w-full h-48 object-cover" 
+              />
               <div className="card-description">
                 <h3 className="text-xl font-bold mb-2">Alberta Drone Specialists</h3>
                 <p>
@@ -59,10 +63,11 @@ export default function Home() {
                 </p>
                 <div className="flex mt-5 self-end text-sm">
                   <a 
-                    href="https://abdronespecialists.ca/" 
+                    href="#" 
                     rel="noreferrer"
                     target="_blank"
                     className="button"
+                    disabled
                   >
                     View Site
                   </a>
@@ -70,7 +75,11 @@ export default function Home() {
               </div>
             </div>
             <div className="card">
-              <img src="" alt="" className="bg-gray-100 w-full h-44 object-cover" />
+              <img 
+                src="/images/ss-hn.jpg" 
+                alt="screenshot of hn.rendo.ca homepage" 
+                className="bg-gray-100 w-full h-48 object-cover" 
+              />
               <div className="card-description">
                 <h3 className="text-xl font-bold mb-2">HackerNews Viewer</h3>
                 <p>
