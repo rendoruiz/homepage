@@ -19,9 +19,10 @@ const ContactForm = () => {
         "email": event.target.email.value,
         "message": event.target.message.value,
         "g-recaptcha-response": captchaResponse
-      })
+      });
+      console.log(encodedBody);
 
-      axios.post('/', { encodedBody }, { headers: { 'content-type': 'application/x-www-form-urlencoded' }})
+      axios.post('/', encodedBody)
         .then((response) => {
           alert(response);
           console.log(response);
