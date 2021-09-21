@@ -1,12 +1,29 @@
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/dist/client/router'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { scroller } from 'react-scroll'
+
 import ContactForm from '../components/ContactForm'
 
 export default function Home() {
+  const router = useRouter();
+
   const anchorScroll = (id) => {
-    document.getElementById(id).scrollIntoView({behavior: "smooth", block: "start"});
+    const scrollDuration = 800;
+
+    // scroll to element
+    scroller.scrollTo(id, { 
+      duration: scrollDuration, 
+      delay: 0, 
+      smooth: 'easeInOutCubic' 
+    });
+
+    // change route after scrolling
+    setTimeout(() => {
+      router.push(`/#${id}`, undefined, { shallow: true });
+    }, scrollDuration);
   }
 
   return (
