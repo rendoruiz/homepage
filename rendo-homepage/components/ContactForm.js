@@ -5,22 +5,22 @@ const ContactForm = () => {
       .join("&")
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "name": e.target.name.value,
-        "email": e.target.email.value,
-        "message": e.target.message.value
+        "name": event.target.name.value,
+        "email": event.target.email.value,
+        "message": event.target.message.value,
+        "g-recaptcha-response": ""
       })
     }).then(() => alert('success')).catch(error => alert(error))
   }
 
   return ( 
     <form 
-      onSubmit={handleSubmit}
       name="contact" 
       method="POST" 
       netlify-honeypot="honeyjar"
