@@ -30,7 +30,7 @@
 }
 
 .input {
-  @apply p-2 border-b-2 border-primary rounded bg-gray-100 bg-opacity-50 transition-colors;
+  @apply p-2 border-b-2 border-primary rounded bg-gray-100 bg-opacity-50 transition-colors focus:shadow-md;
 }
 .input-hint {
   @apply invisible mt-[2px] text-xs text-red-500;

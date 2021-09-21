@@ -37,14 +37,15 @@ const ContactForm = () => {
             "message": message,
             "g-recaptcha-response": captchaResponse
           });
+          const axiosHeader = { header: { "Content-Type": "application/x-www-form-urlencoded" } };
     
-          axios.post('/', encodedBody, { header: { "Content-Type": "application/x-www-form-urlencoded" } })
+          axios.post('/', encodedBody, axiosHeader)
             .then((response) => {
-              alert(response);
+              alert('Message has been sent.');
               console.log(response);
             })
             .catch((error) => {
-              alert(error);
+              alert('An error has occured.');
               console.error(error);
             });
         } 
