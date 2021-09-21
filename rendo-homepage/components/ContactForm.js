@@ -12,6 +12,7 @@ const ContactForm = () => {
     event.preventDefault();
     
     const captchaResponse = grecaptcha.getResponse();
+
     if (captchaResponse) {
       const encodedBody = encode({
         "name": event.target.name.value,
@@ -20,7 +21,7 @@ const ContactForm = () => {
         "g-recaptcha-response": captchaResponse
       })
 
-      axios.post('/', encodedBody, { headers: { 'content-type': 'application/x-www-form-urlencoded' }})
+      axios.post('/', { encodedBody }, { headers: { 'content-type': 'application/x-www-form-urlencoded' }})
         .then((response) => {
           alert(response);
           console.log(response);
