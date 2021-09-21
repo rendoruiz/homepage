@@ -11,10 +11,10 @@ const ContactForm = () => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": event.target.getAttribute("form-name").value,
-        "name": event.target.name.value,
-        "email": event.target.email.value,
-        "message": event.target.message.value
+        "form-name": e.target.getAttribute("form-name").value,
+        "name": e.target.name.value,
+        "email": e.target.email.value,
+        "message": e.target.message.value
       })
     }).then(() => alert('success')).catch(error => alert(error))
   }
