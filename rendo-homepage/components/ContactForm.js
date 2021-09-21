@@ -22,7 +22,7 @@ const ContactForm = () => {
       });
       console.log(encodedBody);
 
-      axios.post('/', encodedBody)
+      axios.post(`${window.location.origin}/`, encodedBody)
         .then((response) => {
           alert(response);
           console.log(response);
