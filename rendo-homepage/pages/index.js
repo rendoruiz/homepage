@@ -28,7 +28,9 @@ export default function Home() {
     <MainLayout>
       <Head>
         <title>Rendo Ruiz</title>
+        <meta name="description" content="Rendo's portfolio site."></meta>
         <meta property="og:title" content="Rendo Ruiz"></meta>
+        <meta property="og:description" content="Rendo's portfolio site."></meta>
       </Head>
 
       <section className="px-5">
@@ -49,7 +51,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold">My portfolio.</h2>
           <div className="mt-7 md:mt-5 grid md:grid-cols-2 gap-7 md:gap-5">
             <div className="card">
-              <img src="" alt="" className="bg-gray-100 h-44" />
+              <img src="" alt="" className="bg-gray-200 w-full h-44 object-cover" />
               <div className="card-description">
                 <h3 className="text-xl font-bold mb-2">Alberta Drone Specialists</h3>
                 <p>
@@ -68,7 +70,7 @@ export default function Home() {
               </div>
             </div>
             <div className="card">
-              <img src="" alt="" className="bg-gray-100 h-44" />
+              <img src="" alt="" className="bg-gray-100 w-full h-44 object-cover" />
               <div className="card-description">
                 <h3 className="text-xl font-bold mb-2">HackerNews Viewer</h3>
                 <p>
