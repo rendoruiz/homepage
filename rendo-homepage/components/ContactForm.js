@@ -1,3 +1,4 @@
+import axios from 'axios'
 import Head from 'next/head'
 
 const ContactForm = () => {
@@ -12,16 +13,22 @@ const ContactForm = () => {
     
     const captchaResponse = grecaptcha.getResponse();
     if (captchaResponse) {
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
-          "name": event.target.name.value,
-          "email": event.target.email.value,
-          "message": event.target.message.value,
-          "g-recaptcha-response": captchaResponse
+      const encodedBody = encode({
+        "name": event.target.name.value,
+        "email": event.target.email.value,
+        "message": event.target.message.value,
+        "g-recaptcha-response": captchaResponse
+      })
+
+      axios.post('/', encodedBody, { headers: { 'content-type': 'application/x-www-form-urlencoded' }})
+        .then((response) => {
+          alert(response);
+          console.log(response);
         })
-      }).then(() => alert('success')).catch(error => alert(error))
+        .catch((error) => {
+          alert(error);
+          console.error(error);
+        });
     } 
     else {
       alert('Complete captcha before sending.')
