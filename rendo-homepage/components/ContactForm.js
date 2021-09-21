@@ -11,12 +11,12 @@ const ContactForm = () => {
     console.log(event.target.name.value)
     console.log(event.target.email.value)
     console.log(event.target.message.value)
-    console.log(event.target.getAttribute('g-recaptcha-response'))
+    console.log(grecaptcha.getResponse())
     console.log(encode({
       "name": event.target.name.value,
       "email": event.target.email.value,
       "message": event.target.message.value,
-      "g-recaptcha-response": ""
+      "g-recaptcha-response": grecaptcha.getResponse()
     }))
     event.preventDefault();
 
