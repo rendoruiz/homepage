@@ -1,6 +1,7 @@
 const ContactForm = () => {
   return ( 
     <form 
+
       name="contact" 
       method="POST" 
       data-netlify="true" 
@@ -71,6 +72,8 @@ const ContactForm = () => {
           className="p-2 border-b-2 border-primary rounded bg-gray-100 bg-opacity-50 min-h-[100px] max-h-[300px]"
         />
       </div>
+
+      <div class="g-recaptcha" data-sitekey="SITE_RECAPTCHA_KEY"></div>
 
       <button 
         type="submit"

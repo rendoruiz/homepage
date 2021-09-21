@@ -14,6 +14,7 @@ export default function Home() {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       </Head>
 
       <header className="p-5">
@@ -57,7 +58,7 @@ export default function Home() {
               I am recent graduate from NAIT under the Digital Media & IT progam on the Computer Software Development concentration. I enjoy working on front-end development and have experience building sites using React.js, Next.js, Create React App, tailwindcss, HTML, CSS, and JavaScript.
             </p>
             <p className="mt-5 leading-7">
-              Scroll down to check out my <span className="anchorlink">portfolio</span> and feel free to leave a message on the <span className="anchorlink">contact form</span> further below.
+              Scroll down to check out <span className="anchorlink">my portfolio</span> and feel free to <span className="anchorlink">leave a message</span> on the contact form further below.
             </p>
           </div>
         </section>
