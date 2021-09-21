@@ -23,7 +23,9 @@ export default function Home() {
             <Link href="/">
               <a className="border-2 rounded leading-none text-2xl font-bold font-mono w-8 h-8 grid place-items-center text-gray-800 border-gray-800 hover:bg-primary hover:border-primary hover:text-gray-100 transition-colors">r</a>
             </Link>
-            <span className="ml-3 text-2xl font-bold mb-[-2px]">rendo.ca</span>
+            <Link href="/">
+              <a className="ml-3 text-2xl font-bold mb-[-2px] hover:text-primary transition-colors">rendo.ca</a>
+            </Link>
           </div>
 
           <ul className="flex">

@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 const ContactForm = () => {
   const encode = (data) => {
     return Object.keys(data)
@@ -19,6 +21,12 @@ const ContactForm = () => {
       })
     }).then(() => alert('success')).catch(error => alert(error))
   }
+
+  useEffect(() => {
+    if (window.grecaptcha) {
+      grecaptcha.reset();
+    }
+  }, [])
 
   return ( 
     <form 
@@ -94,7 +102,7 @@ const ContactForm = () => {
         />
       </div>
 
-      <div className="grid mb-5">
+      <div className="grid mb-8">
         <span className="font-bold mb-1">Captcha</span>
         <div className="g-recaptcha" data-sitekey={process.env.SITE_RECAPTCHA_KEY}></div>
       </div>
