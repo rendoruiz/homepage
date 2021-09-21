@@ -1,11 +1,10 @@
 const ContactForm = () => {
   return ( 
     <form 
-
       name="contact" 
       method="POST" 
-      data-netlify="true" 
       netlify-honeypot="honeyjar"
+      data-netlify="true" 
       className="grid content-start"
     >
       <input 
@@ -57,7 +56,7 @@ const ContactForm = () => {
         />
       </div>
 
-      <div className="grid mb-8">
+      <div className="grid mb-5">
         <label 
           htmlFor="message" 
           className="font-bold mb-1"
@@ -73,7 +72,10 @@ const ContactForm = () => {
         />
       </div>
 
-      <div class="g-recaptcha" data-sitekey={process.env.SITE_RECAPTCHA_KEY}></div>
+      <div className="mb-5">
+        <span className="font-bold mb-1">Captcha</span>
+        <div className="g-recaptcha" data-sitekey={process.env.SITE_RECAPTCHA_KEY}></div>
+      </div>
 
       <button 
         type="submit"
