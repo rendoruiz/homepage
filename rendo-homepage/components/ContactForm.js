@@ -1,7 +1,12 @@
 import axios from 'axios'
+import clsx from 'clsx'
 import Head from 'next/head'
+import { useEffect, useState } from 'react'
 
 const ContactForm = () => {
+  const [highlightInvalidFields, setHighlightInvalidFields] = useState(false);
+  const [captchaHint, setCaptchaHint] = useState(null);
+
   const encode = (data) => {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -11,29 +16,47 @@ const ContactForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     
-    const captchaResponse = grecaptcha.getResponse();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const message = event.target.message.value;
 
-    if (captchaResponse) {
-      const encodedBody = encode({
-        'form-name': 'contact',
-        "name": event.target.name.value,
-        "email": event.target.email.value,
-        "message": event.target.message.value,
-        "g-recaptcha-response": captchaResponse
-      });
-
-      axios.post('/', encodedBody, {header: { "Content-Type": "application/x-www-form-urlencoded" }})
-        .then((response) => {
-          alert(response);
-          console.log(response);
-        })
-        .catch((error) => {
-          alert(error);
-          console.error(error);
-        });
-    } 
+    if (name.length <= 0 || email.length <= 0 || message.length <= 0) {
+      setHighlightInvalidFields(true);
+    }
     else {
-      alert('Complete captcha before sending.')
+      let captchaResponse = null;
+
+      try {
+        captchaResponse = grecaptcha.getResponse();
+
+        if (captchaResponse) {
+          const encodedBody = encode({
+            'form-name': 'contactform',
+            "name": name,
+            "email": email,
+            "message": message,
+            "g-recaptcha-response": captchaResponse
+          });
+    
+          axios.post('/', encodedBody, { header: { "Content-Type": "application/x-www-form-urlencoded" } })
+            .then((response) => {
+              alert(response);
+              console.log(response);
+            })
+            .catch((error) => {
+              alert(error);
+              console.error(error);
+            });
+        } 
+        else {
+          setCaptchaHint('Captcha is required.');
+        }
+      } catch(error) {
+        console.error(error);
+        setCaptchaHint('Captcha unavailable.');
+      }
+      
+      
     }
   }
 
@@ -47,6 +70,10 @@ const ContactForm = () => {
     }
   }
 
+  useEffect(() => {
+
+  }, [captchaHint]);
+
   return ( 
     <>
       <Head>
@@ -55,16 +82,16 @@ const ContactForm = () => {
 
       <form 
         onSubmit={handleSubmit}
-        name="contact" 
+        name="contactform" 
         method="POST" 
         netlify-honeypot="honeyjar"
         data-netlify="true" 
-        className="grid content-start"
+        className={clsx("grid content-start", {"display-invalid" : highlightInvalidFields})}
       >
         <input 
           type="hidden" 
           name="form-name"
-          value="contact" 
+          value="contactform" 
         />
 
         <div className="hidden">
@@ -76,7 +103,7 @@ const ContactForm = () => {
           </label>
         </div>
 
-        <div className="grid mb-5">
+        <div className="grid mb-3">
           <label 
             htmlFor="name" 
             className="font-bold mb-1">
@@ -88,11 +115,13 @@ const ContactForm = () => {
             name="name" 
             placeholder="Name"
             required
-            className="p-2 border-b-2 border-primary rounded bg-gray-100 bg-opacity-50"
+            autoComplete="off"
+            className="input"
           />
+          <span className="input-hint">Name is required.</span>
         </div>
 
-        <div className="grid mb-5">
+        <div className="grid mb-3">
           <label 
             htmlFor="email"
             className="font-bold mb-1"
@@ -106,11 +135,12 @@ const ContactForm = () => {
             placeholder="Email"
             required
             autoComplete="email"
-            className="p-2 border-b-2 border-primary rounded bg-gray-100 bg-opacity-50"
+            className="input"
           />
+          <span className="input-hint">Valid email is required.</span>
         </div>
 
-        <div className="grid mb-5">
+        <div className="grid mb-3">
           <label 
             htmlFor="message" 
             className="font-bold mb-1"
@@ -122,13 +152,15 @@ const ContactForm = () => {
             name="message" 
             placeholder="Message"
             required
-            className="p-2 border-b-2 border-primary rounded bg-gray-100 bg-opacity-50 min-h-[100px] max-h-[300px]"
+            className="input min-h-[100px] max-h-[300px]"
           />
+          <span className="input-hint">Message is required.</span>
         </div>
 
         <div className="grid mb-8">
           <span className="font-bold mb-1">Captcha</span>
           <div className="g-recaptcha origin-top-left transform scale-[0.77] sm:scale-100" data-sitekey={process.env.SITE_RECAPTCHA_KEY}></div>
+          { captchaHint && <span className="text-xs text-red-500">{captchaHint}</span> }
           <p 
             onClick={refreshCaptcha}
             className="mt-1 text-xs text-primary cursor-pointer"

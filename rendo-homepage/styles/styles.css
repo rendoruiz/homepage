@@ -28,3 +28,21 @@
   @apply p-4 grid;
   grid-template-rows: auto auto 1fr;
 }
+
+.input {
+  @apply p-2 border-b-2 border-primary rounded bg-gray-100 bg-opacity-50 transition-colors;
+}
+.input-hint {
+  @apply invisible mt-[2px] text-xs text-red-500;
+}
+
+.input:focus:required:invalid,
+.input:focus:invalid {
+  @apply border-red-500 bg-red-50;
+}
+
+.input:focus:required:invalid + .input-hint,
+.input:focus:invalid + .input-hint,
+.display-invalid .input-hint {
+  @apply visible;
+}
