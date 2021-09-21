@@ -6,30 +6,18 @@ const ContactForm = () => {
   }
 
   const handleSubmit = (event) => {
-    console.log(event)
-    console.log(event.target)
-    console.log(event.target.name.value)
-    console.log(event.target.email.value)
-    console.log(event.target.message.value)
-    console.log(grecaptcha.getResponse())
-    console.log(encode({
-      "name": event.target.name.value,
-      "email": event.target.email.value,
-      "message": event.target.message.value,
-      "g-recaptcha-response": grecaptcha.getResponse()
-    }))
     event.preventDefault();
 
-    // fetch("/", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: encode({
-    //     "name": event.target.name.value,
-    //     "email": event.target.email.value,
-    //     "message": event.target.message.value,
-    //     "g-recaptcha-response": ""
-    //   })
-    // }).then(() => alert('success')).catch(error => alert(error))
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "name": event.target.name.value,
+        "email": event.target.email.value,
+        "message": event.target.message.value,
+        "g-recaptcha-response": grecaptcha.getResponse()
+      })
+    }).then(() => alert('success')).catch(error => alert(error))
   }
 
   return ( 
