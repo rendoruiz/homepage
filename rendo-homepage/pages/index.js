@@ -52,7 +52,7 @@ export default function Home() {
         <section className="px-5 bg-white">
           <div className="mx-auto max-w-3xl w-full py-20">
             <h1 className="text-4xl font-bold text-gray-900">Hello, I'm Rendo</h1>
-            <span className="text-gray-500 text-xl font-bold">web developer</span>
+            <span className="text-gray-500 text-xl font-bold">Web Developer</span>
             <p className="mt-7 leading-7">
               I am recent graduate from NAIT under the Digital Media & IT progam on the Computer Software Development concentration. I enjoy working on front-end development and have experience building sites using React.js, Next.js, Create React App, tailwindcss, HTML, CSS, and JavaScript.
             </p>
@@ -65,7 +65,7 @@ export default function Home() {
         <section className="px-5 bg-primary text-white bg-opacity-70">
           <div className="mx-auto max-w-3xl w-full py-20">
             <h2 className="text-4xl font-bold">My portfolio.</h2>
-            <div className="mt-5 grid grid-cols-2 gap-5">
+            <div className="mt-7 md:mt-5 grid md:grid-cols-2 gap-7 md:gap-5">
               <div className="card">
                 <img src="" alt="" className="bg-gray-100 h-44" />
                 <div className="card-description">
