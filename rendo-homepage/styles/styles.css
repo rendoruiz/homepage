@@ -16,6 +16,10 @@
   @apply w-full;
 }
 
+.button {
+  @apply px-3 py-1 border-2 border-primary rounded-full font-bold hover:bg-primary hover:text-white transition-colors;
+}
+
 .card {
   @apply bg-white text-gray-800 rounded shadow-lg overflow-hidden grid;
   grid-template-rows: auto 1fr;

@@ -2,6 +2,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Head from 'next/head'
 import Link from 'next/link'
+import ContactForm from '../components/ContactForm'
 
 export default function Home() {
   return (
@@ -57,7 +58,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="px-5 bg-primary text-white bg-opacity-80">
+        <section className="px-5 bg-primary text-white bg-opacity-70">
           <div className="mx-auto max-w-3xl w-full py-14">
             <h2 className="text-4xl font-bold">My portfolio.</h2>
             <div className="mt-5 grid grid-cols-2 gap-5">
@@ -68,14 +69,14 @@ export default function Home() {
                   <p>
                     My first work project with <a href="https://bridgeittech.ca/">BridgeIT Tech</a>. The site is built using Next.js' Static Site Generation (SSG). This is the first project I used Next.js and CSS Modules on that spans multiple pages.
                   </p>
-                  <div className="flex mt-5 self-end">
+                  <div className="flex mt-5 self-end text-sm">
                     <a 
                       href="https://abdronespecialists.ca/" 
                       rel="noreferrer"
                       target="_blank"
-                      className="px-3 py-1 border-2 border-primary rounded-full text-sm font-bold hover:bg-primary hover:text-white transition-colors"
+                      className="button"
                     >
-                      View
+                      View Site
                     </a>
                   </div>
                 </div>
@@ -87,20 +88,20 @@ export default function Home() {
                   <p>
                     My first personal project using React.js and Create React App library. The site uses HackerNews's free API for content and mimics Reddit's new design for layout. The site is hosted on Netlify with CI/CD enabled.
                   </p>
-                  <div className="flex mt-5 self-end">
+                  <div className="flex mt-5 self-end text-sm">
                     <a 
                       href="https://hn.rendo.ca/" 
                       rel="noreferrer"
                       target="_blank"
-                      className="px-3 py-1 border-2 border-primary rounded-full text-sm font-bold hover:bg-primary hover:text-white transition-colors"
+                      className="button"
                     >
-                      View
+                      View Site
                     </a>
                     <a 
                       href="https://github.com/rendoruiz/reactjs-hackernews" 
                       rel="noreferrer"
                       target="_blank"
-                      className="ml-2 px-3 py-1 border-2 border-primary rounded-full text-sm font-bold hover:bg-primary hover:text-white transition-colors"
+                      className="ml-2 button"
                     >
                       GitHub Repository
                     </a>
@@ -113,25 +114,8 @@ export default function Home() {
 
         <section className="px-5 bg-white">
           <div className="mx-auto max-w-3xl w-full py-14">
-            <h2 className="text-4xl font-bold">Leave a message.</h2>
-            <form name="contact" method="POST" data-netlify="true">
-              <input type="hidden" name="form-name" value="contact" />
-              <p>
-                <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" />
-              </p>
-              <p>
-                <label htmlFor="email">Email</label>
-                <input type="text" id="email" name="email" />
-              </p>
-              <p>
-                <label htmlFor="message">Message</label>
-                <textarea id="message" name="message"></textarea>
-              </p>
-              <p>
-                <button type="submit">Send</button>
-              </p>
-            </form>
+            <h2 className="text-4xl font-bold mb-5">Leave a message.</h2>
+            <ContactForm />
           </div>
         </section>
       </main>
