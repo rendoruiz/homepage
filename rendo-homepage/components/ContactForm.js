@@ -3,9 +3,8 @@ const ContactForm = () => {
     <form 
       name="contact" 
       method="POST" 
-      data-netlify-recaptcha="true"
       data-netlify="true" 
-      // netlify-honeypot="honeyjar"
+      netlify-honeypot="honeyjar"
       className="grid content-start"
     >
       <input 
@@ -14,14 +13,14 @@ const ContactForm = () => {
         value="contact" 
       />
 
-      {/* <div className="hidden">
+      <div className="hidden">
         <label>
           <input 
             type="text" 
             name="honeyjar" 
           />
         </label>
-      </div> */}
+      </div>
 
       <div className="grid mb-5">
         <label 
@@ -72,8 +71,6 @@ const ContactForm = () => {
           className="p-2 border-b-2 border-primary rounded bg-gray-100 bg-opacity-50 min-h-[100px] max-h-[300px]"
         />
       </div>
-
-      <div data-netlify-recaptcha="true"></div>
 
       <button 
         type="submit"
