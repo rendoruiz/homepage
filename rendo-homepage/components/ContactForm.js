@@ -30,7 +30,11 @@ const ContactForm = () => {
 
   const refreshCaptcha = () => {
     if (window.grecaptcha) {
-      window.grecaptcha.reset();
+      try {
+        window.grecaptcha.reset();
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 
