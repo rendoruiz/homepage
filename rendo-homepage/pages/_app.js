@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:image" content="/images/og-image.png"/>
         <meta property="og:image:width" content="800"/>
         <meta property="og:image:height" content="321"/>
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Component {...pageProps} />
     </>
