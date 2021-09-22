@@ -1,13 +1,16 @@
+import { useRouter } from 'next/dist/client/router'
+import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import clsx from 'clsx'
-import { useRouter } from 'next/dist/client/router'
-import Head from 'next/head'
-import { useEffect, useState } from 'react'
+import Reaptcha from 'reaptcha'
 
 const ContactForm = () => {
   const [highlightInvalidFields, setHighlightInvalidFields] = useState(false);
   const [captchaHint, setCaptchaHint] = useState(null);
+  const [captchaResponse, setCaptchaResponse] = useState(null);
+  const captchaRef = useRef();
   const router = useRouter();
+  const captchaKey = process.env.NEXT_PUBLIC_SITE_RECAPTCHA_KEY;
 
   const encode = (data) => {
     return Object.keys(data)
@@ -26,55 +29,36 @@ const ContactForm = () => {
       setHighlightInvalidFields(true);
     }
     else {
-      let captchaResponse = null;
-
-      try {
-        captchaResponse = grecaptcha.getResponse();
-
-        if (captchaResponse) {
-          const encodedBody = encode({
-            'form-name': 'contactform',
-            "name": name,
-            "email": email,
-            "message": message,
-            "g-recaptcha-response": captchaResponse
+      if (captchaResponse) {
+        const encodedBody = encode({
+          'form-name': 'contactform',
+          "name": name,
+          "email": email,
+          "message": message,
+          "g-recaptcha-response": captchaResponse
+        });
+        const axiosHeader = { header: { "Content-Type": "application/x-www-form-urlencoded" } };
+  
+        axios.post('/', encodedBody, axiosHeader)
+          .then((response) => {
+            // alert('Message has been sent.');
+            // console.log(response);
+            router.push('/contactsuccess');
+          })
+          .catch((error) => {
+            // alert('An error has occured.');
+            // console.error(error);
+            router.push('/contacterror');
           });
-          const axiosHeader = { header: { "Content-Type": "application/x-www-form-urlencoded" } };
-    
-          axios.post('/', encodedBody, axiosHeader)
-            .then((response) => {
-              // alert('Message has been sent.');
-              // console.log(response);
-              router.push('/contactsuccess');
-            })
-            .catch((error) => {
-              // alert('An error has occured.');
-              // console.error(error);
-              router.push('/contacterror');
-            });
-        } 
-        else {
-          setCaptchaHint('Captcha is required.');
-        }
-      } catch(error) {
-        // console.error(error);
-        setCaptchaHint('Captcha unavailable.');
+      } 
+      else {
+        setCaptchaHint('Captcha is required.');
       }
-      
-      
     }
   }
 
   const refreshCaptcha = () => {
-    if (window.grecaptcha) {
-      try {
-        window.grecaptcha.reset();
-        setCaptchaHint(null);
-      } catch (error) {
-        // console.error(error);
-        setCaptchaHint('Captcha unavailable.')
-      }
-    }
+    captchaRef.current.reset();
   }
 
   useEffect(() => {
@@ -83,10 +67,6 @@ const ContactForm = () => {
 
   return ( 
     <>
-      <Head>
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-      </Head>
-
       <form 
         onSubmit={handleSubmit}
         name="contactform" 
@@ -167,7 +147,14 @@ const ContactForm = () => {
         <div className="grid mb-8">
           <span className="font-bold mb-1">Captcha</span>
           <div className="relative w-full overflow-auto h-[60px] mobile-xl:h-full">
-            <div className="g-recaptcha absolute transform scale-[0.75] origin-top-left mobile-xl:static mobile-xl:scale-100" data-sitekey={process.env.SITE_RECAPTCHA_KEY}></div>
+            <div className="absolute transform scale-[0.75] origin-top-left mobile-xl:static mobile-xl:scale-100">
+              <Reaptcha
+                sitekey={captchaKey}
+                onVerify={(token) => setCaptchaResponse(token)}
+                onError={() => setCaptchaHint('Captcha Unavailable.')}
+                ref={captchaRef}
+              />
+            </div>
           </div>
           
           { captchaHint && <span className="text-xs text-red-500">{captchaHint}</span> }
@@ -182,6 +169,7 @@ const ContactForm = () => {
         <button 
           type="submit"
           className="button w-40 justify-self-center"
+          disabled={!captchaResponse}
         >
           Send
         </button>
