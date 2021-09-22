@@ -15,14 +15,12 @@ const MainLayout = ({ children }) => {
 
       <header className="p-5">
         <div className="mx-auto max-w-3xl w-full flex items-center justify-between">
-          <div className="flex items-center">
-            <Link href="/">
-              <a className="border-2 rounded leading-none text-2xl font-bold font-mono w-8 h-8 grid place-items-center text-gray-800 border-gray-800 hover:bg-primary hover:border-primary hover:text-gray-100 transition-colors">r</a>
-            </Link>
-            <Link href="/">
-              <a className="ml-3 text-2xl font-bold mb-[-2px] hover:text-primary transition-colors">rendo.ca</a>
-            </Link>
-          </div>
+          <Link href="/">
+            <a className="flex items-center group">
+              <span className="border-2 rounded leading-none text-2xl font-bold font-mono w-8 h-8 grid place-items-center text-gray-800 border-gray-800 group-hover:bg-primary group-hover:border-primary group-hover:text-gray-100 transition-colors">r</span>
+              <span className="ml-3 text-2xl font-bold mb-[-2px] group-hover:text-primary transition-colors">rendo.ca</span>
+            </a>
+          </Link>
 
           <ul className="flex">
             <li>
