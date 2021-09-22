@@ -154,7 +154,7 @@ const ContactForm = () => {
           { captchaHint && <span className="text-xs text-red-500">{captchaHint}</span> }
           <p 
             onClick={refreshCaptcha}
-            className="mt-1 text-xs text-primary cursor-pointer"
+            className="mt-1 text-xs text-primary cursor-pointer justify-self-start border-transparent border-b-2 transition-colors hover:border-primary"
           >
             Not loading? Click here to refresh.
           </p>
