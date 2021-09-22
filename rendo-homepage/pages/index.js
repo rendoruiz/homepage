@@ -38,7 +38,7 @@ export default function Home() {
           <h1 className="text-4xl font-bold text-gray-900">Hello, I'm Rendo</h1>
           <span className="text-gray-500 text-xl font-bold">Web Developer</span>
           <p className="mt-7 leading-7">
-            I am a recent graduate from NAIT under the Digital Media & IT program in the Computer Software Development concentration. I enjoy working on front-end development and have experience building sites using React.js, Next.js, Create React App, Tailwind CSS, HTML, CSS, and JavaScript.
+            I am a recent graduate from NAIT under the Digital Media & IT program in the Computer Software Development concentration. I enjoy working on front-end web development and have experience building sites using React.js, Next.js, Create React App, Tailwind CSS, HTML, CSS, and JavaScript.
           </p>
           <p className="mt-5 leading-7">
             Scroll down to check out <span className="anchorlink" onClick={() => anchorScroll("portfolio")}>my portfolio</span>, and feel free to <span className="anchorlink" onClick={() => anchorScroll("contact")}>leave a message</span> on the contact form further below.
