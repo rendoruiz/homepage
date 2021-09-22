@@ -9,6 +9,9 @@ module.exports = {
       },
       fontFamily: {
         primary: 'Mukta'
+      },
+      screens: {
+        'mobile-xl': '360px'
       }
     },
   },

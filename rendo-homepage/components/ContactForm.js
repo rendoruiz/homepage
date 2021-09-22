@@ -166,7 +166,10 @@ const ContactForm = () => {
 
         <div className="grid mb-8">
           <span className="font-bold mb-1">Captcha</span>
-          <div className="g-recaptcha origin-top-left transform scale-[0.77] sm:scale-100" data-sitekey={process.env.SITE_RECAPTCHA_KEY}></div>
+          <div className="relative w-full overflow-auto h-[60px] mobile-xl:h-full">
+            <div className="g-recaptcha absolute transform scale-[0.75] origin-top-left mobile-xl:static mobile-xl:scale-100" data-sitekey={process.env.SITE_RECAPTCHA_KEY}></div>
+          </div>
+          
           { captchaHint && <span className="text-xs text-red-500">{captchaHint}</span> }
           <p 
             onClick={refreshCaptcha}
