@@ -47,9 +47,9 @@ export default function Home() {
       </section>
 
       <section id="portfolio" className="px-5 bg-primary text-white bg-opacity-70">
-        <div className="mx-auto max-w-3xl w-full py-20">
-          <h2 className="text-4xl font-bold">My portfolio.</h2>
-          <div className="mt-7 md:mt-5 grid md:grid-cols-2 gap-7 md:gap-5">
+        <div className="mx-auto max-w-3xl w-full pt-20 pb-24">
+          <h2 className="text-4xl font-bold mb-7 md:mb-6">My portfolio.</h2>
+          <div className="grid md:grid-cols-2 gap-7 md:gap-5">
             <div className="card">
               <img 
                 src="/images/ss-abs.jpg" 
@@ -111,7 +111,7 @@ export default function Home() {
 
       <section id="contact" className="px-5">
         <div className="mx-auto max-w-3xl w-full py-20">
-          <h2 className="text-4xl font-bold mb-5">Leave a message.</h2>
+          <h2 className="text-4xl font-bold mb-7">Leave a message.</h2>
           <ContactForm />
         </div>
       </section>
