@@ -31,6 +31,7 @@ export default function Home() {
         <meta name="description" content="Rendo's portfolio site."></meta>
         <meta property="og:title" content="Rendo Ruiz"></meta>
         <meta property="og:description" content="Rendo's portfolio site."></meta>
+        <meta property="og:url" content="https://rendo.ca/" />
       </Head>
 
       <section className="px-5">
