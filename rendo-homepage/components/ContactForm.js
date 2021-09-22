@@ -149,10 +149,10 @@ const ContactForm = () => {
           <div className="relative w-full overflow-auto h-[60px] mobile-xl:h-full">
             <div className="absolute transform scale-[0.75] origin-top-left mobile-xl:static mobile-xl:scale-100">
               <ReCAPTCHA
-                sitekey={process.env.SITE_RECAPTCHA_KEY}
+                sitekey={`${process.env.SITE_RECAPTCHA_KEY}`}
                 onChange={(token) => setCaptchaResponse(token)}
-                onErrored={() =>setCaptchaHint('Captcha unavailable.')}
-                ref={captchaRef}
+                onErrored={() => setCaptchaHint('Captcha unavailable.')}
+                // ref={captchaRef}
               />
             </div>
           </div>
