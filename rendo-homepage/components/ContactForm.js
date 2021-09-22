@@ -1,9 +1,8 @@
-import Head from 'next/head'
 import { useRouter } from 'next/dist/client/router'
 import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import clsx from 'clsx'
-import ReCAPTCHA from "react-google-recaptcha";
+import Reaptcha from 'reaptcha'
 
 const ContactForm = () => {
   const [highlightInvalidFields, setHighlightInvalidFields] = useState(false);
@@ -11,6 +10,7 @@ const ContactForm = () => {
   const [captchaResponse, setCaptchaResponse] = useState(null);
   const captchaRef = useRef();
   const router = useRouter();
+  const captchaKey = process.env.NEXT_PUBLIC_SITE_RECAPTCHA_KEY;
 
   const encode = (data) => {
     return Object.keys(data)
@@ -148,11 +148,11 @@ const ContactForm = () => {
           <span className="font-bold mb-1">Captcha</span>
           <div className="relative w-full overflow-auto h-[60px] mobile-xl:h-full">
             <div className="absolute transform scale-[0.75] origin-top-left mobile-xl:static mobile-xl:scale-100">
-              <ReCAPTCHA
-                sitekey={`${process.env.SITE_RECAPTCHA_KEY}`}
-                onChange={(token) => setCaptchaResponse(token)}
-                onErrored={() => setCaptchaHint('Captcha unavailable.')}
-                // ref={captchaRef}
+              <Reaptcha
+                sitekey={captchaKey}
+                onVerify={(token) => setCaptchaResponse(token)}
+                onError={() => setCaptchaHint('Captcha Unavailable.')}
+                ref={captchaRef}
               />
             </div>
           </div>
