@@ -10,7 +10,7 @@ const ContactForm = () => {
   const [captchaResponse, setCaptchaResponse] = useState(null);
   const captchaRef = useRef();
   const router = useRouter();
-  const captchaKey = process.env.NEXT_PUBLIC_SITE_RECAPTCHA_KEY;
+  const captchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
   const encode = (data) => {
     return Object.keys(data)
