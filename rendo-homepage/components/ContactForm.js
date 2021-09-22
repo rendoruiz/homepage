@@ -1,5 +1,5 @@
 import { useRouter } from 'next/dist/client/router'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import axios from 'axios'
 import clsx from 'clsx'
 import Reaptcha from 'reaptcha'
@@ -41,17 +41,14 @@ const ContactForm = () => {
   
         axios.post('/', encodedBody, axiosHeader)
           .then((response) => {
-            // alert('Message has been sent.');
-            // console.log(response);
             router.push('/contactsuccess');
           })
           .catch((error) => {
-            // alert('An error has occured.');
-            // console.error(error);
             router.push('/contacterror');
           });
       } 
       else {
+        captchaRef.current.reset();
         setCaptchaHint('Captcha is required.');
       }
     }
@@ -59,11 +56,8 @@ const ContactForm = () => {
 
   const refreshCaptcha = () => {
     captchaRef.current.reset();
+    setCaptchaHint(null);
   }
-
-  useEffect(() => {
-
-  }, [captchaHint]);
 
   return ( 
     <>
@@ -169,7 +163,6 @@ const ContactForm = () => {
         <button 
           type="submit"
           className="button w-40 justify-self-center"
-          disabled={!captchaResponse}
         >
           Send
         </button>
