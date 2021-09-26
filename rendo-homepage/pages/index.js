@@ -36,7 +36,7 @@ export default function Home() {
 
       <section className="px-5">
         <div className="mx-auto max-w-3xl w-full py-20">
-          <h1 className="text-4xl font-bold text-gray-900">Hello, I'm Rendo</h1>
+          <h1 className="text-4xl font-bold text-gray-900">Hello, I'm Rendo.</h1>
           <span className="text-gray-500 text-xl font-bold">Web Developer</span>
           <p className="mt-7 leading-7">
             I am a recent graduate from NAIT under the Digital Media & IT program in the Computer Software Development concentration. I enjoy working on front-end web development and have experience building sites using React.js, Next.js, Create React App, Tailwind CSS, HTML, CSS, and JavaScript.
@@ -64,7 +64,7 @@ export default function Home() {
                 </p>
                 <div className="flex mt-5 self-end text-sm">
                   <a 
-                    href="#" 
+                    href="https://abdronespecialists.ca/" 
                     rel="noreferrer"
                     target="_blank"
                     className="button"
