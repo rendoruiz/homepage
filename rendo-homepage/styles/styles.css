@@ -15,6 +15,9 @@
 .button {
   @apply px-3 py-1 border-2 border-primary rounded-full font-bold hover:bg-primary hover:text-white transition-colors disabled:bg-gray-100 disabled:border-gray-300 disabled:text-gray-300 disabled:cursor-not-allowed;
 }
+.button.inactive {
+  @apply bg-gray-100 border-gray-300 text-gray-300 pointer-events-none;
+}
 
 .card {
   @apply bg-white text-gray-800 rounded shadow-lg overflow-hidden grid grid-rows-[auto,1fr] hover:shadow-xl transition-shadow;
@@ -22,9 +25,12 @@
 .card-description {
   @apply p-4 grid grid-rows-[auto,auto,1fr];
 }
+.card .button + .button {
+  @apply ml-2;
+}
 
 .input {
-  @apply p-2 border-b-2 border-primary rounded bg-gray-200 bg-opacity-50 transition-all focus:shadow-md hover:shadow-md;
+  @apply p-2 border-b-2 border-primary rounded bg-gray-200/50 transition-all focus:shadow-md hover:shadow-md;
 }
 .input-hint {
   @apply invisible mt-[2px] text-xs text-red-500;

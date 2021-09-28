@@ -47,7 +47,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="portfolio" className="px-5 bg-primary text-white bg-opacity-70">
+      <section id="portfolio" className="px-5 bg-primary/70 text-white">
         <div className="mx-auto max-w-3xl w-full pt-20 pb-24">
           <h2 className="text-4xl font-bold mb-7 md:mb-6">My portfolio.</h2>
           <div className="grid md:grid-cols-2 gap-7 md:gap-5">
@@ -67,10 +67,17 @@ export default function Home() {
                     href="https://abdronespecialists.ca/" 
                     rel="noreferrer"
                     target="_blank"
-                    className="button"
-                    disabled
+                    className="button inactive"
                   >
                     View Site
+                  </a>
+                  <a 
+                    href="https://abdrones.pv.rendo.ca/" 
+                    rel="noreferrer"
+                    target="_blank"
+                    className="button"
+                  >
+                    Static Preview
                   </a>
                 </div>
               </div>
@@ -99,7 +106,7 @@ export default function Home() {
                     href="https://github.com/rendoruiz/reactjs-hackernews" 
                     rel="noreferrer"
                     target="_blank"
-                    className="ml-2 button"
+                    className="button"
                   >
                     GitHub Repository
                   </a>
