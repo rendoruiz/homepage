@@ -4,7 +4,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const MainLayout = ({ children }) => {
   return ( 
-    <div className="mainlayout">
+    <div className="min-h-screen bg-gray-100 text-gray-800 font-primary tracking-wide select-none grid grid-rows-[auto,1fr,auto]">
       <header className="p-5">
         <div className="mx-auto max-w-3xl w-full flex items-center justify-between">
           <Link href="/">

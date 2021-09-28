@@ -4,20 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.mainlayout {
-  @apply min-h-screen bg-gray-100 text-gray-800 font-primary tracking-wide select-none grid;
-  grid-template-rows: auto 1fr auto;
-}
-
 .anchorlink {
-  @apply text-primary font-bold cursor-pointer relative;
+  @apply text-primary font-bold cursor-pointer relative hover:after:w-full;
 }
 .anchorlink::after {
   content: ' ';
   @apply absolute right-0 bottom-0 left-0 mx-auto h-1 w-4 rounded bg-primary transition-all ease-out duration-200;
-}
-.anchorlink:hover::after {
-  @apply w-full;
 }
 
 .button {
@@ -25,12 +17,10 @@
 }
 
 .card {
-  @apply bg-white text-gray-800 rounded shadow-lg overflow-hidden grid hover:shadow-xl transition-shadow;
-  grid-template-rows: auto 1fr;
+  @apply bg-white text-gray-800 rounded shadow-lg overflow-hidden grid grid-rows-[auto,1fr] hover:shadow-xl transition-shadow;
 }
 .card-description {
-  @apply p-4 grid;
-  grid-template-rows: auto auto 1fr;
+  @apply p-4 grid grid-rows-[auto,auto,1fr];
 }
 
 .input {
