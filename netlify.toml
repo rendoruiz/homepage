@@ -4,4 +4,4 @@
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "0"
     X-Content-Type-Options = "nosniff"
-    Content-Security-Policy = "default-src 'self' googleapis.com *.googleapis.com recaptcha.net; frame-ancestors 'self'; form-action 'self'"
+    Content-Security-Policy = "default-src 'self' googleapis.com *.googleapis.com gstatic.com *.gstatic.com recaptcha.net; frame-ancestors 'self'; form-action 'self'"
