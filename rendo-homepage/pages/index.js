@@ -60,25 +60,25 @@ export default function Home() {
               <div className="card-description">
                 <h3 className="text-xl font-bold mb-2">Alberta Drone Specialists</h3>
                 <p>
-                  The website for Alberta Drone Specialists is my first work project with <a href="https://bridgeittech.ca/">BridgeIT Tech</a>. This website is the first project I used Next.js on using its Static Site Generation (SSG) feature and CSS Modules.
+                  The website for Alberta Drone Specialists is my first work project on <a href="https://bridgeittech.ca/">BridgeIT Tech Solutions</a>. This website is the first project I used Next.js on using its Static Site Generation (SSG) feature and CSS Modules.
                 </p>
                 <div className="flex mt-5 self-end text-sm">
                   <a 
                     href="https://abdronespecialists.ca/" 
                     rel="noreferrer"
                     target="_blank"
-                    className="button inactive"
+                    className="button"
                   >
-                    In Progress
+                    View Site
                   </a>
-                  {/* <a 
+                  <a 
                     href="https://abdrones.pv.rendo.ca/" 
                     rel="noreferrer"
                     target="_blank"
                     className="button"
                   >
-                    Static Preview
-                  </a> */}
+                    Static Mirror
+                  </a>
                 </div>
               </div>
             </div>
