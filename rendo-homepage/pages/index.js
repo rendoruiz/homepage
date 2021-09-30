@@ -65,6 +65,7 @@ export default function Home() {
                 <div className="flex mt-5 self-end text-sm">
                   <a 
                     href="https://abdronespecialists.ca/" 
+                    title="Alberta Drone Specialists project live site"
                     rel="noreferrer"
                     target="_blank"
                     className="button"
@@ -73,6 +74,7 @@ export default function Home() {
                   </a>
                   <a 
                     href="https://abdrones.pv.rendo.ca/" 
+                    title="static mirror of the site with server requests disabled"
                     rel="noreferrer"
                     target="_blank"
                     className="button"
@@ -96,6 +98,7 @@ export default function Home() {
                 <div className="flex mt-5 self-end text-sm">
                   <a 
                     href="https://hn.rendo.ca/" 
+                    title="HackerNews Viewer project live site"
                     rel="noreferrer"
                     target="_blank"
                     className="button"
@@ -104,6 +107,7 @@ export default function Home() {
                   </a>
                   <a 
                     href="https://github.com/rendoruiz/reactjs-hackernews" 
+                    title="HackerNews Viewer project GitHub repository"
                     rel="noreferrer"
                     target="_blank"
                     className="button"

@@ -8,7 +8,10 @@ const MainLayout = ({ children }) => {
       <header className="p-5">
         <div className="mx-auto max-w-3xl w-full flex items-center justify-between">
           <Link href="/">
-            <a className="flex items-center group">
+            <a 
+              title="homepage link"
+              className="flex items-center group" 
+            >
               <span className="border-2 rounded leading-none text-2xl font-bold font-mono w-8 h-8 grid place-items-center text-gray-800 border-gray-800 group-hover:bg-primary group-hover:border-primary group-hover:text-gray-100 transition-colors">r</span>
               <span className="ml-3 text-2xl font-bold mb-[-2px] group-hover:text-primary transition-colors">rendo.ca</span>
             </a>
@@ -18,7 +21,7 @@ const MainLayout = ({ children }) => {
             <li>
               <a 
                 href="https://www.linkedin.com/in/rendo-ruiz"
-                title="LinkedIn link"
+                title="LinkedIn page link"
                 className="text-2xl hover:text-primary transition-colors"
               >
                 <FontAwesomeIcon icon={faLinkedin} />
@@ -27,7 +30,7 @@ const MainLayout = ({ children }) => {
             <li>
               <a 
                 href="https://github.com/rendoruiz"
-                title="GitHub link"
+                title="GitHub page link"
                 className="text-2xl hover:text-primary transition-colors ml-6"
               >
                 <FontAwesomeIcon icon={faGithub} />
@@ -46,7 +49,7 @@ const MainLayout = ({ children }) => {
           <li>
             <a 
               href="https://www.linkedin.com/in/rendo-ruiz"
-              title="LinkedIn link"
+              title="LinkedIn page link"
               className="text-xl hover:text-primary transition-colors"
             >
               <FontAwesomeIcon icon={faLinkedin} />
@@ -55,7 +58,7 @@ const MainLayout = ({ children }) => {
           <li>
             <a 
               href="https://github.com/rendoruiz"
-              title="GitHub link"
+              title="GitHub page link"
               className="text-xl hover:text-primary transition-colors ml-6"
             >
               <FontAwesomeIcon icon={faGithub} />
