@@ -69,16 +69,16 @@ export default function Home() {
                     target="_blank"
                     className="button inactive"
                   >
-                    View Site
+                    In Progress
                   </a>
-                  <a 
+                  {/* <a 
                     href="https://abdrones.pv.rendo.ca/" 
                     rel="noreferrer"
                     target="_blank"
                     className="button"
                   >
                     Static Preview
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
