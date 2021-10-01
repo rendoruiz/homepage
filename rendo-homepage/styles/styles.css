@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .anchorlink {
-  @apply text-primary font-bold cursor-pointer relative hover:after:w-full;
+  @apply inline-block text-primary font-bold cursor-pointer relative hover:after:w-full;
 }
 .anchorlink::after {
   content: ' ';
