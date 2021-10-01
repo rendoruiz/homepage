@@ -91,14 +91,14 @@ export default function Home() {
                 className="bg-gray-100 w-full h-48 object-cover" 
               />
               <div className="card-description">
-                <h3 className="text-xl font-bold mb-2">HackerNews Viewer</h3>
+                <h3 className="text-xl font-bold mb-2">Hacker News Viewer</h3>
                 <p>
-                  This HackerNews viewer is my first personal project using React.js and Create React App library. The site uses HackerNews's free API for content and mimics Reddit's new design for layout. I used Netlify for its hosting with CI/CD enabled.
+                  This Hacker News viewer is my first personal project using React.js and Create React App library. The site uses HackerNews's free API for content and mimics Reddit's new design for layout. I used Netlify for its hosting with CI/CD enabled.
                 </p>
                 <div className="flex mt-5 self-end text-sm">
                   <a 
                     href="https://hn.rendo.ca/" 
-                    title="HackerNews Viewer project live site"
+                    title="Hacker News Viewer project live site"
                     rel="noreferrer"
                     target="_blank"
                     className="button"
@@ -107,7 +107,7 @@ export default function Home() {
                   </a>
                   <a 
                     href="https://github.com/rendoruiz/reactjs-hackernews" 
-                    title="HackerNews Viewer project GitHub repository"
+                    title="Hacker News Viewer project GitHub repository"
                     rel="noreferrer"
                     target="_blank"
                     className="button"
