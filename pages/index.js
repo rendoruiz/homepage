@@ -3,7 +3,6 @@ import { useRouter } from 'next/dist/client/router'
 import { scroller } from 'react-scroll'
 
 import SiteLayout from '../components/SiteLayout'
-import ContactForm from '../components/Contact/ContactForm'
 import Contact from '../components/Contact/Contact'
 
 export default function Home() {

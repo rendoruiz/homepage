@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 
