@@ -4,16 +4,20 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const MainLayout = ({ children }) => {
   return ( 
-    <div className="min-h-screen bg-gray-100 text-gray-800 font-primary tracking-wide select-none grid grid-rows-[auto,1fr,auto]">
+    <div className="grid grid-rows-[auto,1fr,auto] min-h-screen bg-gray-100 font-primary text-gray-800 tracking-wide select-none">
       <header className="p-5">
-        <div className="mx-auto max-w-3xl w-full flex items-center justify-between">
+        <div className="flex justify-between items-center mx-auto w-full max-w-3xl">
           <Link href="/">
             <a 
               title="homepage link"
-              className="flex items-center group" 
+              className="group flex items-center" 
             >
-              <span className="border-2 rounded leading-none text-2xl font-bold font-mono w-8 h-8 grid place-items-center text-gray-800 border-gray-800 group-hover:bg-primary group-hover:border-primary group-hover:text-gray-100 transition-colors">r</span>
-              <span className="ml-3 text-2xl font-bold mb-[-2px] group-hover:text-primary transition-colors">rendo.ca</span>
+              <div className="grid place-items-center border-2 border-gray-800 rounded-md w-8 h-8 font-mono font-bold text-2xl text-gray-800 leading-none transition-colors group-hover:border-primary group-hover:bg-primary group-hover:text-gray-100">
+                r
+              </div>
+              <h1 className="ml-3 mb-[-2px] font-bold text-2xl transition-colors group-hover:text-primary">
+                rendo
+              </h1>
             </a>
           </Link>
 
@@ -22,7 +26,7 @@ const MainLayout = ({ children }) => {
               <a 
                 href="https://www.linkedin.com/in/rendo-ruiz"
                 title="LinkedIn page link"
-                className="text-2xl hover:text-primary transition-colors"
+                className="text-2xl transition-colors hover:text-primary"
               >
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
@@ -31,7 +35,7 @@ const MainLayout = ({ children }) => {
               <a 
                 href="https://github.com/rendoruiz"
                 title="GitHub page link"
-                className="text-2xl hover:text-primary transition-colors ml-6"
+                className="ml-6 transition-colors text-2xl hover:text-primary"
               >
                 <FontAwesomeIcon icon={faGithub} />
               </a>
@@ -45,12 +49,12 @@ const MainLayout = ({ children }) => {
       </main>
 
       <footer className="p-5 text-sm text-gray-500 text-center">
-        <ul className="mb-2 flex justify-center">
+        <ul className="flex justify-center mb-2">
           <li>
             <a 
               href="https://www.linkedin.com/in/rendo-ruiz"
               title="LinkedIn page link"
-              className="text-xl hover:text-primary transition-colors"
+              className="text-xl transition-colors hover:text-primary"
             >
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
@@ -59,7 +63,7 @@ const MainLayout = ({ children }) => {
             <a 
               href="https://github.com/rendoruiz"
               title="GitHub page link"
-              className="text-xl hover:text-primary transition-colors ml-6"
+              className="ml-6 text-xl transition-colors hover:text-primary"
             >
               <FontAwesomeIcon icon={faGithub} />
             </a>
