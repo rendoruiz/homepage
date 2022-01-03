@@ -1,4 +1,4 @@
-import ContactResponseLayout from '../components/Contact/ContactResponse/ContactResponseLayout';
+import ContactResponseLayout from '../components/Contact/ContactResponseLayout';
 
 const ContactError = () => {
   return ( 

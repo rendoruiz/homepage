@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-import SiteLayout from "../../SiteLayout";
+import SiteLayout from "../SiteLayout";
 
 const ContactResponseLayout = ({ title, children }) => {
   return (  
