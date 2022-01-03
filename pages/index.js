@@ -3,7 +3,8 @@ import { useRouter } from 'next/dist/client/router'
 import { scroller } from 'react-scroll'
 
 import SiteLayout from '../components/SiteLayout'
-import ContactForm from '../components/ContactForm'
+import ContactForm from '../components/Contact/ContactForm'
+import Contact from '../components/Contact/Contact'
 
 export default function Home() {
   const router = useRouter();
@@ -121,12 +122,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="px-5">
-        <div className="mx-auto max-w-screen-sm w-full py-20">
-          <h2 className="text-4xl font-bold mb-7">Leave a message.</h2>
-          <ContactForm />
-        </div>
-      </section>
+      {/* contact form */}
+      <Contact />
     </SiteLayout>
   )
 }
