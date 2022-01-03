@@ -8,6 +8,7 @@ const ContactResponseLayout = ({ title, children }) => {
     <SiteLayout>
       <Head>
         <title>{ title } - Rendo Ruiz</title>
+        <meta name="robots" content="noindex, follow" />
       </Head>
 
       <div className="grid justify-center content-center h-full text-center">
