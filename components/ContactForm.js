@@ -4,19 +4,15 @@ import axios from 'axios'
 import clsx from 'clsx'
 import Reaptcha from 'reaptcha'
 
+// required for netlify forms
+const formName = 'contactform';
+
 const ContactForm = () => {
   const [highlightInvalidFields, setHighlightInvalidFields] = useState(false);
   const [captchaHint, setCaptchaHint] = useState(null);
   const [captchaResponse, setCaptchaResponse] = useState(null);
   const captchaRef = useRef();
-  const router = useRouter();
   const captchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&")
-  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,27 +25,17 @@ const ContactForm = () => {
       setHighlightInvalidFields(true);
     }
     else {
-      if (captchaResponse) {
-        const encodedBody = encode({
-          'form-name': 'contactform',
-          "name": name,
-          "email": email,
-          "message": message,
-          "g-recaptcha-response": captchaResponse
-        });
-        const axiosHeader = { header: { "Content-Type": "application/x-www-form-urlencoded" } };
-  
-        axios.post('/', encodedBody, axiosHeader)
-          .then((response) => {
-            router.push('/contactsuccess');
-          })
-          .catch((error) => {
-            router.push('/contacterror');
-          });
-      } 
-      else {
+      if (!captchaResponse) {
         captchaRef.current.reset();
         setCaptchaHint('Captcha is required.');
+      } 
+      else {
+        sendMessage({
+          name: name,
+          email: email,
+          message: message,
+          captcha: captchaResponse,
+        });
       }
     }
   }
@@ -62,17 +48,20 @@ const ContactForm = () => {
   return ( 
     <form 
       onSubmit={handleSubmit}
-      name="contactform" 
+      name={formName} 
       method="POST" 
       netlify-honeypot="honeyjar"
       data-netlify="true" 
-      className={clsx("grid content-start", {"display-invalid" : highlightInvalidFields})}
+      className={clsx(
+        "grid content-start gap-3", 
+        { "display-invalid" : highlightInvalidFields },
+      )}
     >
       {/* netlify forms */}
       <input 
         type="hidden" 
         name="form-name"
-        value="contactform" 
+        value={formName} 
       />
 
       {/* honeypot */}
@@ -85,7 +74,8 @@ const ContactForm = () => {
         </label>
       </div>
 
-      <div className="grid mb-3">
+      {/* name */}
+      <div className="grid">
         <label 
           htmlFor="name" 
           className="font-bold mb-1"
@@ -94,7 +84,6 @@ const ContactForm = () => {
         </label>
         <input 
           type="text" 
-          id="name"
           name="name" 
           placeholder="Name"
           required
@@ -106,7 +95,8 @@ const ContactForm = () => {
         </span>
       </div>
 
-      <div className="grid mb-3">
+      {/* email */}
+      <div className="grid">
         <label 
           htmlFor="email"
           className="font-bold mb-1"
@@ -115,7 +105,6 @@ const ContactForm = () => {
         </label>
         <input 
           type="email" 
-          id="email"
           name="email" 
           placeholder="Email"
           required
@@ -127,7 +116,8 @@ const ContactForm = () => {
         </span>
       </div>
 
-      <div className="grid mb-3">
+      {/* message */}
+      <div className="grid">
         <label 
           htmlFor="message" 
           className="font-bold mb-1"
@@ -135,7 +125,6 @@ const ContactForm = () => {
           Message
         </label>
         <textarea 
-          id="message" 
           name="message" 
           placeholder="Message"
           required
@@ -146,7 +135,8 @@ const ContactForm = () => {
         </span>
       </div>
 
-      <div className="grid mb-8">
+      {/* recaptcha v2 */}
+      <div className="grid mb-3">
         <span className="font-bold mb-1">
           Captcha
         </span>
@@ -166,14 +156,15 @@ const ContactForm = () => {
             {captchaHint}
           </span> 
         )}
-        <p 
+        <button 
           onClick={refreshCaptcha}
           className="mt-1 text-xs text-primary cursor-pointer justify-self-start border-transparent border-b-2 transition-colors hover:border-primary"
         >
           Not loading? Click here to refresh.
-        </p>
+        </button>
       </div>
 
+      {/* submit */}
       <button 
         type="submit"
         className="button w-40 justify-self-center"
@@ -184,4 +175,32 @@ const ContactForm = () => {
   );
 }
  
+const encodeData = (data) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
+const sendMessage = ({ name, email, message, captcha }) => {
+  const router = useRouter();
+
+  const postObject = encodeData({
+    'form-name': formName,
+    "name": name,
+    "email": email,
+    "message": message,
+    "g-recaptcha-response": captcha
+  });
+
+  const requestHeader = { header: { "Content-Type": "application/x-www-form-urlencoded" } };
+  axios.post('/', postObject, requestHeader)
+    .then((response) => {
+      router.push('/contactsuccess');
+    })
+    .catch((error) => {
+      router.push('/contacterror');
+      console.log({error});
+    });
+}
+
 export default ContactForm;
