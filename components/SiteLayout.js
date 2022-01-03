@@ -5,7 +5,7 @@ import SiteFooter from './SiteFooter';
 
 const SiteLayout = ({ children }) => {
   return ( 
-    <div className="grid grid-rows-[auto,1fr,auto] min-h-screen bg-gray-100 font-primary text-gray-800 tracking-wide select-none">
+    <div className="grid grid-rows-[auto,1fr,auto] min-w-[300px] min-h-screen bg-gray-100 font-primary text-gray-800 tracking-wide select-none">
       {/* header */}
       <SiteHeader />
 
