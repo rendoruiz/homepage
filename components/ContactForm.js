@@ -53,7 +53,7 @@ const ContactForm = () => {
       netlify-honeypot="honeyjar"
       data-netlify="true" 
       className={clsx(
-        "grid content-start gap-3", 
+        "grid content-start gap-2", 
         { "display-invalid" : highlightInvalidFields },
       )}
     >
@@ -75,10 +75,10 @@ const ContactForm = () => {
       </div>
 
       {/* name */}
-      <div className="grid">
+      <div className="grid gap-1">
         <label 
           htmlFor="name" 
-          className="font-bold mb-1"
+          className="font-bold"
         >
           Name
         </label>
@@ -96,10 +96,10 @@ const ContactForm = () => {
       </div>
 
       {/* email */}
-      <div className="grid">
+      <div className="grid gap-1">
         <label 
           htmlFor="email"
-          className="font-bold mb-1"
+          className="font-bold"
         >
           Email
         </label>
@@ -117,10 +117,10 @@ const ContactForm = () => {
       </div>
 
       {/* message */}
-      <div className="grid">
+      <div className="grid gap-1">
         <label 
           htmlFor="message" 
-          className="font-bold mb-1"
+          className="font-bold"
         >
           Message
         </label>

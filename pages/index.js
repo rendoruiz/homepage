@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/dist/client/router'
 import { scroller } from 'react-scroll'
 
-import MainLayout from '../components/MainLayout'
+import SiteLayout from '../components/SiteLayout'
 import ContactForm from '../components/ContactForm'
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
   }
 
   return (
-    <MainLayout>
+    <SiteLayout>
       <Head>
         <title>Rendo Ruiz</title>
         <meta name="description" content="Rendo's portfolio site." />
@@ -35,7 +35,7 @@ export default function Home() {
       </Head>
 
       <section className="px-5">
-        <div className="mx-auto max-w-3xl w-full py-20">
+        <div className="mx-auto max-w-screen-sm w-full py-20">
           <h1 className="text-4xl font-bold text-gray-900">Hello, I'm Rendo.</h1>
           <span className="text-gray-500 text-xl font-bold">Web Developer</span>
           <p className="mt-7 leading-7">
@@ -48,7 +48,7 @@ export default function Home() {
       </section>
 
       <section id="portfolio" className="px-5 bg-primary/70 text-white">
-        <div className="mx-auto max-w-3xl w-full pt-20 pb-24">
+        <div className="mx-auto max-w-screen-sm w-full pt-20 pb-24">
           <h2 className="text-4xl font-bold mb-7 md:mb-6">My portfolio.</h2>
           <div className="grid md:grid-cols-2 gap-7 md:gap-5">
             <div className="card">
@@ -122,11 +122,11 @@ export default function Home() {
       </section>
 
       <section id="contact" className="px-5">
-        <div className="mx-auto max-w-3xl w-full py-20">
+        <div className="mx-auto max-w-screen-sm w-full py-20">
           <h2 className="text-4xl font-bold mb-7">Leave a message.</h2>
           <ContactForm />
         </div>
       </section>
-    </MainLayout>
+    </SiteLayout>
   )
 }

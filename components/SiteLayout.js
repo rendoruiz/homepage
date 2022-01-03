@@ -2,11 +2,11 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
-const MainLayout = ({ children }) => {
+const SiteLayout = ({ children }) => {
   return ( 
     <div className="grid grid-rows-[auto,1fr,auto] min-h-screen bg-gray-100 font-primary text-gray-800 tracking-wide select-none">
       <header className="p-5">
-        <div className="flex justify-between items-center mx-auto w-full max-w-3xl">
+        <div className="flex justify-between items-center mx-auto w-full max-w-screen-sm">
           <Link href="/">
             <a 
               title="homepage link"
@@ -76,4 +76,4 @@ const MainLayout = ({ children }) => {
   );
 }
  
-export default MainLayout;
+export default SiteLayout;
