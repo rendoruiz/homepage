@@ -4,12 +4,12 @@ import { scroller } from 'react-scroll'
 const Spotlight = () => {
   return (  
     <section className="px-5">
-      <div className="mx-auto max-w-screen-sm w-full py-20">
+      <div className="mx-auto py-20 w-full max-w-screen-sm">
         <div className="grid gap-1 mb-10">
-          <h1 className="text-4xl font-bold text-gray-900">
+          <h1 className="font-bold text-4xl text-gray-900">
             Hello, I'm Rendo.
           </h1>
-          <p className="text-gray-500 text-xl font-bold">
+          <p className="font-bold text-xl text-gray-500">
             I do front-end stuff.
           </p>
         </div>
