@@ -8,13 +8,13 @@ const Portfolio = () => {
       className="px-5 pt-20 pb-24 bg-primary/70 text-white"
     >
       <div className="mx-auto max-w-screen-sm w-full">
-        <h2 className="text-4xl font-bold mb-7 md:mb-6">
+        <h2 className="text-4xl font-bold mb-5 sm:mb-7">
           My portfolio.
         </h2>
 
         {/* external projects */}
-        <div className="grid gap-4 sm:grid-cols-2">
-          <h3 className="font-bold text-2xl sm:col-span-2">
+        <div className="grid gap-5 sm:grid-cols-2">
+          <h3 className="font-bold text-2xl sm:col-span-2 sm:-mb-1">
             Projects I've worked on
           </h3>
 
@@ -34,8 +34,8 @@ const Portfolio = () => {
         </div>
 
         {/* personal projects */}
-        <div className="grid gap-4 mt-8 sm:grid-cols-2">
-          <h3 className="font-bold text-2xl sm:col-span-2">
+        <div className="grid gap-5 mt-8 sm:grid-cols-2">
+          <h3 className="font-bold text-2xl sm:col-span-2 sm:-mb-1">
             Personal projects
           </h3>
 
