@@ -1,6 +1,9 @@
 const Portfolio = () => {
   return (  
-    <section id="portfolio" className="px-5 bg-primary/70 text-white">
+    <section 
+      id="portfolio" 
+      className="px-5 bg-primary/70 text-white"
+    >
       <div className="mx-auto max-w-screen-sm w-full pt-20 pb-24">
         <h2 className="text-4xl font-bold mb-7 md:mb-6">My portfolio.</h2>
         <div className="grid md:grid-cols-2 gap-7 md:gap-5">
