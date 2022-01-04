@@ -47,7 +47,6 @@ const ContactForm = () => {
         const requestHeader = { header: { "Content-Type": "application/x-www-form-urlencoded" } };
         axios.post('/', postObject, requestHeader)
           .then((response) => {
-            console.log({ response });
             router.push('/contactsuccess');
           })
           .catch((error) => {
@@ -65,7 +64,7 @@ const ContactForm = () => {
 
   return ( 
     <form 
-      onSubmit={handleSubmit}
+      onSubmit={(e) => handleSubmit(e)}
       name="homepagecontact"
       method="POST" 
       netlify-honeypot="honeyjar"

@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
 
-        <meta property="og:image" content="https://home.rendo.ca/images/og-image.png"/>
+        <meta property="og:image" content="https://rendoruiz.com/images/og-image.png"/>
         <meta property="og:image:width" content="800"/>
         <meta property="og:image:height" content="321"/>
         <meta name="twitter:card" content="summary_large_image" />
