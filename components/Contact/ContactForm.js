@@ -43,11 +43,10 @@ const ContactForm = () => {
         const requestHeader = { header: { "Content-Type": "application/x-www-form-urlencoded" } };
         axios.post('/', postObject, requestHeader)
           .then((response) => {
-            router.push('/contactsuccess');
+            console.log({ response });
           })
           .catch((error) => {
             router.push('/contacterror');
-            console.log({error});
           });
       }
     }
@@ -71,7 +70,6 @@ const ContactForm = () => {
         { "display-invalid" : highlightInvalidFields },
       )}
     >
-      {/* netlify forms */}
       <input 
         type="hidden" 
         name="form-name"
