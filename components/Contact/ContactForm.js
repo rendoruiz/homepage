@@ -11,7 +11,12 @@ const ContactForm = () => {
   const [captchaResponse, setCaptchaResponse] = useState(null);
   const captchaRef = useRef();
   const captchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-  // required for netlify forms
+
+  const encodeData = (data) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,11 +36,11 @@ const ContactForm = () => {
       else {
         // encode data
         const postObject = encodeData({
-          'form-name': 'homepagecontact',
+          "form-name": "homepagecontact",
           "name": name,
           "email": email,
           "message": message,
-          "g-recaptcha-response": captchaResponse
+          "g-recaptcha-response": captchaResponse,
         });
       
         // post data
@@ -43,6 +48,7 @@ const ContactForm = () => {
         axios.post('/', postObject, requestHeader)
           .then((response) => {
             console.log({ response });
+            router.push('/contactsuccess');
           })
           .catch((error) => {
             router.push('/contacterror');
@@ -184,12 +190,6 @@ const ContactForm = () => {
       </button>
     </form>
   );
-}
- 
-const encodeData = (data) => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
 }
 
 export default ContactForm;
