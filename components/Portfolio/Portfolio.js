@@ -45,7 +45,7 @@ const Portfolio = () => {
             title="Hacker News Viewer (Next.js)"
           >
             <p className="text-sm">
-              New viewer made with different libraries from the first iteration. Follows Reddit's UI/UX more closely and supports dark mode.
+              New viewer made with different libraries from the first iteration. Follows Reddit's UI/UX more closely and comes with dark mode support.
             </p>
             <div className="grid mt-3">
               <span className="font-bold text-xs text-gray-500 tracking-widest uppercase">
