@@ -4,31 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.anchorlink {
-  @apply inline-block text-primary font-bold cursor-pointer relative hover:after:w-full;
-}
-.anchorlink::after {
-  content: ' ';
-  @apply absolute right-0 bottom-0 left-0 mx-auto h-1 w-4 rounded bg-primary transition-all ease-out duration-200;
-}
-
-.button {
-  @apply px-3 py-1 border-2 border-primary rounded-full font-bold hover:bg-primary hover:text-white transition-colors disabled:bg-gray-100 disabled:border-gray-300 disabled:text-gray-300 disabled:cursor-not-allowed;
-}
-.button.inactive {
-  @apply bg-gray-100 border-gray-300 text-gray-300 pointer-events-none;
-}
-
-.card {
-  @apply bg-white text-gray-800 rounded shadow-lg overflow-hidden grid grid-rows-[auto,1fr] hover:shadow-xl transition-shadow;
-}
-.card-description {
-  @apply p-4 grid grid-rows-[auto,auto,1fr];
-}
-.card .button + .button {
-  @apply ml-2;
-}
-
 .input {
   @apply p-2 border-b-2 border-primary rounded bg-gray-200/50 transition-all focus:shadow-md hover:shadow-md;
 }
@@ -44,5 +19,5 @@
 .input:focus:required:invalid + .input-hint,
 .input:focus:invalid + .input-hint,
 .display-invalid .input-hint {
-  @apply visible;
+  @apply !visible;
 }

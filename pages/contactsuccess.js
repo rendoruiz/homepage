@@ -1,18 +1,21 @@
-import Link from 'next/link'
-
-import MainLayout from "../components/MainLayout";
+import ContactResponseLayout from '../components/Contact/ContactResponseLayout';
 
 const ContactSuccess = () => {
   return ( 
-    <MainLayout>
-      <div className="h-full grid justify-center content-center text-center">
-        <h2 className="text-5xl font-bold text-primary md:text-6xl">Message sent!</h2>
-        <span className="mt-3 text-2xl text-gray-500">I'll get back to you shortly.</span>
-        <Link href="/" replace>
-          <a className="button mt-7 mb-[-20px] w-40 justify-self-center md:mt-9 md:mb-0">Go back.</a>
-        </Link>
-      </div>
-    </MainLayout>
+    <ContactResponseLayout title="Message Sent!">
+      <span 
+        className="text-7xl drop-shadow-md sm:text-8xl"
+        title="smiling face and eyes emoji"
+      >
+        😊
+      </span>
+      <h2 className="mt-3 text-3xl font-bold text-primary tracking-wide sm:mt-5 sm:text-4xl">
+        Message sent!
+      </h2>
+      <p className="mt-1 text-gray-500 sm:text-lg">
+        I'll get back to you shortly.
+      </p>
+    </ContactResponseLayout>
   );
 }
  
