@@ -167,7 +167,7 @@ const ContactForm = () => {
       {/* submit */}
       <button 
         type="submit"
-        className="border-2 border-primary rounded-full mt-2 px-14 py-1 font-bold text-gray-800 text-center uppercase transition hover:bg-primary/80 hover:text-white active:opacity-80 sm:justify-self-center"
+        className="border-2 border-primary/90 rounded-full mt-2 px-14 py-1 font-bold text-gray-800 text-center uppercase transition hover:bg-primary/90 hover:text-white active:opacity-80 sm:justify-self-center"
       >
         Send
       </button>
