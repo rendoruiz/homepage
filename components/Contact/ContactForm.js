@@ -4,15 +4,15 @@ import axios from 'axios'
 import clsx from 'clsx'
 import Reaptcha from 'reaptcha'
 
-// required for netlify forms
-const formName = 'contactform';
-
 const ContactForm = () => {
+  const router = useRouter();
   const [highlightInvalidFields, setHighlightInvalidFields] = useState(false);
   const [captchaHint, setCaptchaHint] = useState(null);
   const [captchaResponse, setCaptchaResponse] = useState(null);
   const captchaRef = useRef();
   const captchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+  // required for netlify forms
+  const formName = 'contactform';
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,12 +30,25 @@ const ContactForm = () => {
         setCaptchaHint('Captcha is required.');
       } 
       else {
-        sendMessage({
-          name: name,
-          email: email,
-          message: message,
-          captcha: captchaResponse,
+        // encode data
+        const postObject = encodeData({
+          'form-name': formName,
+          "name": name,
+          "email": email,
+          "message": message,
+          "g-recaptcha-response": captchaResponse
         });
+      
+        // post data
+        const requestHeader = { header: { "Content-Type": "application/x-www-form-urlencoded" } };
+        axios.post('/', postObject, requestHeader)
+          .then((response) => {
+            router.push('/contactsuccess');
+          })
+          .catch((error) => {
+            router.push('/contacterror');
+            console.log({error});
+          });
       }
     }
   }
@@ -180,28 +193,6 @@ const encodeData = (data) => {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");
-}
-
-const sendMessage = ({ name, email, message, captcha }) => {
-  const router = useRouter();
-
-  const postObject = encodeData({
-    'form-name': formName,
-    "name": name,
-    "email": email,
-    "message": message,
-    "g-recaptcha-response": captcha
-  });
-
-  const requestHeader = { header: { "Content-Type": "application/x-www-form-urlencoded" } };
-  axios.post('/', postObject, requestHeader)
-    .then((response) => {
-      router.push('/contactsuccess');
-    })
-    .catch((error) => {
-      router.push('/contacterror');
-      console.log({error});
-    });
 }
 
 export default ContactForm;
