@@ -1,3 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
 const PortfolioItemLink = ({ link, title, displayText }) => {
   return (  
     <a 
@@ -5,10 +9,11 @@ const PortfolioItemLink = ({ link, title, displayText }) => {
       title={title}
       rel="noreferrer"
       target="_blank"
-      className="border-2 border-primary rounded-full px-3 py-1 text-center only:basis-full"
+      className="flex items-center justify-center border-2 border-primary rounded-full px-3 py-[0.375rem] text-gray-800 text-center transition only:basis-full hover:bg-primary hover:text-slate-100 active:opacity-80  sm:px-4 sm:only:basis-auto"
     >
+      <FontAwesomeIcon icon={faGithub} />
       <span
-        className="font-bold text-sm text-gray-800 tracking-wider leading-none uppercase"
+        className="ml-[0.375rem] font-bold text-sm tracking-wide leading-none uppercase"
       >
         { displayText }
       </span>

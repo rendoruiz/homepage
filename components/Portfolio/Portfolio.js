@@ -20,14 +20,14 @@ const Portfolio = () => {
 
           <PortfolioItem 
             link="https://bridgeittech.ca/"
-            imagePreview="/images/ss-abs.jpg"
+            imagePreview="/images/pv-bridgeit.jpg"
             title="BridgeIT Tech"
           >
           </PortfolioItem>
 
           <PortfolioItem 
             link="https://abdronespecialists.ca/"
-            imagePreview="/images/ss-abs.jpg"
+            imagePreview="/images/pv-abdrones.jpg"
             title="Alberta Drone Specialists"
           >
           </PortfolioItem>
@@ -40,17 +40,47 @@ const Portfolio = () => {
           </h3>
 
           <PortfolioItem 
-            link="https://bridgeittech.ca/"
-            imagePreview="/images/ss-abs.jpg"
+            link="https://hn.rendo.me/"
+            imagePreview="/images/pv-hnnextjs-type1.png"
             title="Hacker News Viewer (Next.js)"
           >
+            <p className="text-sm">
+              New viewer made with different libraries from the first iteration. Follows Reddit's UI/UX more closely and supports dark mode.
+            </p>
+            <div className="grid mt-3">
+              <span className="font-bold text-xs text-gray-500 tracking-widest uppercase">
+                Project Links
+              </span>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <PortfolioItemLink 
+                  link="https://github.com/rendoruiz/nextjs-hackernews"
+                  title="Hacker News Viewer (Next.js)"
+                  displayText="GitHub"
+                />
+              </div>
+            </div>
           </PortfolioItem>
 
           <PortfolioItem 
-            link="https://abdronespecialists.ca/"
-            imagePreview="/images/ss-abs.jpg"
+            link="https://cra.hn.rendo.me/"
+            imagePreview="/images/pv-hncra.png"
             title="Hacker News Viewer (CRA)"
           >
+            <p className="text-sm">
+              My first attempt at a Hacker News viewer web app. Loosely mimicks Reddit's desktop layout. Made with Create React App.
+            </p>
+            <div className="grid mt-3">
+              <span className="font-bold text-xs text-gray-500 tracking-widest uppercase">
+                Project Links
+              </span>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <PortfolioItemLink 
+                  link="https://github.com/rendoruiz/reactjs-hackernews"
+                  title="Hacker News Viewer (CRA)"
+                  displayText="GitHub"
+                />
+              </div>
+            </div>
           </PortfolioItem>
         </div>
       </div>
