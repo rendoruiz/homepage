@@ -12,7 +12,6 @@ const ContactForm = () => {
   const captchaRef = useRef();
   const captchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
   // required for netlify forms
-  const formName = 'contactform';
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,7 +31,7 @@ const ContactForm = () => {
       else {
         // encode data
         const postObject = encodeData({
-          'form-name': formName,
+          'form-name': 'homepagecontact',
           "name": name,
           "email": email,
           "message": message,
@@ -61,7 +60,7 @@ const ContactForm = () => {
   return ( 
     <form 
       onSubmit={handleSubmit}
-      name={formName} 
+      name="homepagecontact"
       method="POST" 
       netlify-honeypot="honeyjar"
       data-netlify="true" 
@@ -73,7 +72,7 @@ const ContactForm = () => {
       <input 
         type="hidden" 
         name="form-name"
-        value={formName} 
+        value="homepagecontact"
       />
 
       {/* honeypot */}
