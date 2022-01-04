@@ -14,7 +14,7 @@ const Spotlight = () => {
           </p>
         </div>
           
-        <div className="grid gap-4 leading-loose">
+        <div className="grid gap-5 leading-loose">
           <p>
             I am the front-end developer lead at BridgeIT Tech Solutions. I graduated last year from NAIT under the Digital Media & IT program in the Computer Software Development concentration. I enjoy working on front-end and also on the back-end when needed.
           </p>
