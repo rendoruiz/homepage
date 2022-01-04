@@ -24,7 +24,7 @@ const SiteFooter = () => {
           </a>
         </li>
       </ul>
-      <p>&copy; 2021 Rendo Ruiz</p>
+      <p>&copy; 2022 Rendo Ruiz</p>
     </footer>
   );
 }

@@ -40,7 +40,8 @@ const ContactForm = () => {
     }
   }
 
-  const refreshCaptcha = () => {
+  const refreshCaptcha = (e) => {
+    e.preventDefault();
     captchaRef.current.reset();
     setCaptchaHint(null);
   }
@@ -157,8 +158,8 @@ const ContactForm = () => {
           </span> 
         )}
         <button 
-          onClick={refreshCaptcha}
-          className="mt-1 text-xs text-primary cursor-pointer justify-self-start border-transparent border-b-2 transition-colors hover:border-primary"
+          onClick={(e) => refreshCaptcha(e)}
+          className="justify-self-start border-b-2 border-transparent mt-1 text-xs text-primary tracking-wide cursor-pointer transition-colors hover:border-primary"
         >
           Not loading? Click here to refresh.
         </button>

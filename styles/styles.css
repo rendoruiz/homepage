@@ -19,5 +19,5 @@
 .input:focus:required:invalid + .input-hint,
 .input:focus:invalid + .input-hint,
 .display-invalid .input-hint {
-  @apply visible;
+  @apply !visible;
 }
