@@ -3,7 +3,7 @@ import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 const PortfolioItem = ({ link, imagePreview, title, children }) => {
   return (  
-    <div className="grid rounded-md overflow-hidden transition duration-200 hover:shadow-lg">
+    <div className="grid grid-rows-[auto,1fr] rounded-md overflow-hidden transition duration-200 hover:shadow-lg">
       {/* image preview */}
       <a 
         href={link}
@@ -33,7 +33,7 @@ const PortfolioItem = ({ link, imagePreview, title, children }) => {
 
       {/* description & links */}
       { children && (
-        <div className="grid p-3 bg-gray-100 text-gray-800">
+        <div className="grid content-between p-3 bg-gray-100 text-gray-800">
           { children }
         </div>
       )}
