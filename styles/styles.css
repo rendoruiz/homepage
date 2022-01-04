@@ -4,13 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.button {
-  @apply border-2 border-primary rounded-full px-3 py-1 font-bold transition-colors hover:bg-primary hover:text-white disabled:bg-gray-100 disabled:border-gray-300 disabled:text-gray-300 disabled:cursor-not-allowed;
-}
-.button.inactive {
-  @apply border-gray-300 bg-gray-100 text-gray-300 pointer-events-none;
-}
-
 .input {
   @apply p-2 border-b-2 border-primary rounded bg-gray-200/50 transition-all focus:shadow-md hover:shadow-md;
 }
