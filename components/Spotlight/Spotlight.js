@@ -5,14 +5,16 @@ const Spotlight = () => {
   return (  
     <section className="px-5">
       <div className="mx-auto max-w-screen-sm w-full py-20">
-        <h1 className="text-4xl font-bold text-gray-900">
-          Hello, I'm Rendo.
-        </h1>
-        <p className="text-gray-500 text-xl font-bold">
-          I do front-end stuff.
-        </p>
+        <div className="grid gap-1 mb-10">
+          <h1 className="text-4xl font-bold text-gray-900">
+            Hello, I'm Rendo.
+          </h1>
+          <p className="text-gray-500 text-xl font-bold">
+            I do front-end stuff.
+          </p>
+        </div>
           
-        <div className="grid gap-4 mt-7 leading-loose">
+        <div className="grid gap-4 leading-loose">
           <p>
             I am the front-end developer lead at BridgeIT Tech Solutions. I graduated last year from NAIT under the Digital Media & IT program in the Computer Software Development concentration. I enjoy working on front-end and also on the back-end when needed.
           </p>
