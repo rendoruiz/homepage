@@ -10,7 +10,7 @@ const Spotlight = () => {
             Hello, I'm Rendo.
           </h1>
           <p className="font-bold text-xl text-gray-500 dark:text-gray-300">
-            I do front-end stuff.
+            I do front-end dev.
           </p>
         </div>
           
