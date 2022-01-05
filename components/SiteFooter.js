@@ -3,7 +3,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const SiteFooter = () => {
   return (  
-    <footer className="p-5 text-sm text-gray-500 text-center">
+    <footer className="p-5 text-sm text-gray-500 text-center dark:text-gray-300">
       <ul className="flex justify-center mb-2">
         <li>
           <a 

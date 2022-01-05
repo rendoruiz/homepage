@@ -12,10 +12,10 @@ const ContactError = () => {
       <h2 className="mt-3 text-3xl font-bold text-primary tracking-wide sm:mt-5 sm:text-4xl">
         Uh oh!
       </h2>
-      <p className="mt-1 text-gray-500 sm:text-lg">
+      <p className="mt-1 text-gray-500 sm:text-lg dark:text-gray-300">
         An error has occured.
       </p>
-      <p className="mt-2 text-xs text-gray-500/80 sm:text-sm">
+      <p className="mt-2 text-xs text-gray-500/80 sm:text-sm dark:text-gray-300/80">
         Try sending your message again in a bit.
       </p>
     </ContactResponseLayout>

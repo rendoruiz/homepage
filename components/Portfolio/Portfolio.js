@@ -5,7 +5,7 @@ const Portfolio = () => {
   return (  
     <section 
       id="portfolio" 
-      className="px-5 pt-20 pb-24 bg-primary/70 text-white"
+      className="px-5 pt-20 pb-24 bg-primary/70 text-white dark:bg-primary/25"
     >
       <div className="mx-auto max-w-screen-sm w-full">
         <h2 className="text-4xl font-bold mb-5 sm:mb-7">
@@ -48,7 +48,7 @@ const Portfolio = () => {
               New viewer made with different libraries from the first iteration. Follows Reddit's UI/UX more closely and comes with dark mode support.
             </p>
             <div className="grid mt-3">
-              <span className="font-bold text-xs text-gray-500 tracking-widest uppercase">
+              <span className="font-bold text-xs text-gray-500 tracking-widest uppercase dark:text-gray-400">
                 Project Links
               </span>
               <div className="flex flex-wrap gap-2 mt-2">
@@ -70,7 +70,7 @@ const Portfolio = () => {
               My first attempt at a Hacker News viewer web app. Loosely mimicks Reddit's desktop layout. Made with Create React App.
             </p>
             <div className="grid mt-3">
-              <span className="font-bold text-xs text-gray-500 tracking-widest uppercase">
+              <span className="font-bold text-xs text-gray-500 tracking-widest uppercase dark:text-gray-400">
                 Project Links
               </span>
               <div className="flex flex-wrap gap-2 mt-2">

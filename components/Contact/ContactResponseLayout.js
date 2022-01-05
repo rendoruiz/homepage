@@ -16,7 +16,7 @@ const ContactResponseLayout = ({ title, children }) => {
 
         {/* back to home */}
         <Link href="/" replace>
-          <a className="justify-self-center border-2 border-primary/90 rounded-full mt-7 mb-[-20px] px-10 py-1 font-bold text-gray-800 text-center uppercase transition hover:bg-primary/90 hover:text-white active:opacity-80">
+          <a className="justify-self-center border-2 border-primary/90 rounded-full mt-7 mb-[-20px] px-10 py-1 font-bold text-gray-800 text-center uppercase transition hover:bg-primary/90 hover:text-white active:opacity-80 dark:text-gray-100">
             Go back
           </a>
         </Link>
