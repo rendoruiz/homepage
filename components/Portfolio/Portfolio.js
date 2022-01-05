@@ -67,7 +67,7 @@ const Portfolio = () => {
             title="Hacker News Viewer (CRA)"
           >
             <p className="text-sm">
-              My first attempt at a Hacker News viewer web app. Loosely mimicks Reddit's desktop layout. Made with Create React App.
+              My first attempt at a Hacker News viewer web app and also my first React project. Loosely mimicks Reddit's desktop layout. Made with Create React App.
             </p>
             <div className="grid mt-3">
               <span className="font-bold text-xs text-gray-500 tracking-widest uppercase dark:text-gray-400">
