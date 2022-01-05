@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .input {
-  @apply p-2 border-b-2 border-primary rounded bg-gray-200/50 transition-all focus:shadow-md hover:shadow-md;
+  @apply p-2 border-b-2 border-b-primary rounded bg-gray-200/50 transition-all focus:shadow-md hover:shadow-md dark:bg-gray-800;
 }
 .input-hint {
   @apply invisible mt-[2px] text-xs text-red-500;
@@ -13,7 +13,7 @@
 
 .input:focus:required:invalid,
 .input:focus:invalid {
-  @apply border-red-500 bg-red-50;
+  @apply border-b-red-500 bg-red-50 dark:bg-red-300/20;
 }
 
 .input:focus:required:invalid + .input-hint,

@@ -12,7 +12,7 @@ const ContactSuccess = () => {
       <h2 className="mt-3 text-3xl font-bold text-primary tracking-wide sm:mt-5 sm:text-4xl">
         Message sent!
       </h2>
-      <p className="mt-1 text-gray-500 sm:text-lg">
+      <p className="mt-1 text-gray-500 sm:text-lg dark:text-gray-300">
         I'll get back to you shortly.
       </p>
     </ContactResponseLayout>

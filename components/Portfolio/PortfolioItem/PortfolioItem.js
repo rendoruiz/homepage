@@ -20,7 +20,7 @@ const PortfolioItem = ({ link, imagePreview, title, children }) => {
         {/* overlay */}
         <div className="absolute inset-0 bg-black/70 opacity-0 transition-opacity duration-200 group-hover:opacity-30 group-active:opacity-50" />
         {/* title */}
-        <div className="absolute inset-x-0 bottom-0 flex items-center justify-between px-3 py-2 bg-black/60 backdrop-blur-sm">
+        <div className="absolute inset-x-0 bottom-0 flex items-center justify-between px-3 py-2 bg-black/60 backdrop-blur-sm dark:bg-black/70">
           <h4 className="font-bold text-lg text-gray-100 tracking-wide">
             { title }
           </h4>
@@ -33,7 +33,7 @@ const PortfolioItem = ({ link, imagePreview, title, children }) => {
 
       {/* description & links */}
       { children && (
-        <div className="grid content-between p-3 bg-gray-100 text-gray-800">
+        <div className="grid content-between p-3 bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
           { children }
         </div>
       )}
