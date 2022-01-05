@@ -14,9 +14,9 @@ const SiteHeader = () => {
             <div className="grid place-items-center border-2 border-gray-800 rounded-md w-8 h-8 font-mono font-bold text-2xl text-gray-800 leading-none transition-colors group-hover:border-primary group-hover:bg-primary group-hover:text-gray-100 dark:border-gray-100 dark:text-gray-100 dark:group-hover:text-gray-800">
               r
             </div>
-            <h1 className="ml-3 mb-[-2px] font-bold text-2xl transition-colors group-hover:text-primary">
+            <span className="ml-3 mb-[-2px] font-bold text-2xl transition-colors group-hover:text-primary">
               rendo
-            </h1>
+            </span>
           </a>
         </Link>
 
