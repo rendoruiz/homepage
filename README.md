@@ -1,4 +1,6 @@
-# rendoruiz.com
+# Homepage (deprecated)
+
+Hosted on Netlify: https://rendo-oldhome.netlify.app/
 
 Git repository for rendoruiz.com (formerly rendo.ca).
 
